@@ -1,0 +1,26 @@
+{
+    "name": "movemove-io/dadata",
+    "description": "Laravel SDK for working with the DaData.RU service API",
+    "type": "laravel-package",
+    "license": "MIT",
+    "version": "1.0.1",
+    "authors": [
+        {
+            "name": "Dmitry Kovalev",
+            "email": "d.kovalev@movemove.io",
+            "homepage": "https://movemove.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MoveMoveIo\\DaData\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MoveMoveIo\\DaData\\Tests": "tests/"
+        }
+    },
+    "require": {}
+}
