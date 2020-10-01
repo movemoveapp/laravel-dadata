@@ -26,6 +26,8 @@ DADATA_TIMEOUT=10
 - **Работа с адресами**
   - [Стандартизация адреса](https://github.com/movemove-io/laravel-dadata#%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0)
   - [Подсказки по адресам](https://github.com/movemove-io/laravel-dadata#%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D0%BC)
+  - [Определение адреса по координатам](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
+  - [Определение адреса по IP](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-ip)
 
 ### Стандартизация адреса
 `DaDataAddress::standardization(string $address)` - разбивает адрес из строки по отдельным полям (регион, город, улица, дом, квартира) согласно КЛАДР/ФИАС. Определяет почтовый индекс, часовой пояс, ближайшее метро, координаты, стоимость квартиры и другую информацию об адресе.
@@ -266,7 +268,7 @@ array:1 [
 
 **Exceptions**
 
-При вызове методов, вы можете обрабатывать коды иключений и сообщени
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
 
 |       **Код**        |                       **Описание**                                                          |
 |:---------------------|:--------------------------------------------------------------------------------------------|
@@ -580,7 +582,7 @@ array:1 [
 
 **Exceptions**
 
-При вызове методов, вы можете обрабатывать коды иключений и сообщени
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
 
 |       **Код**        |                       **Описание**                                                          |
 |:---------------------|:--------------------------------------------------------------------------------------------|
@@ -870,7 +872,7 @@ array:1 [
 
 **Exceptions**
 
-При вызове методов, вы можете обрабатывать коды иключений и сообщени
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
 
 |       **Код**        |                       **Описание**                                                          |
 |:---------------------|:--------------------------------------------------------------------------------------------|
@@ -1073,7 +1075,7 @@ array:1 [
 
 **Exceptions**
 
-При вызове методов, вы можете обрабатывать коды иключений и сообщени
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
 
 |       **Код**        |                       **Описание**                                                          |
 |:---------------------|:--------------------------------------------------------------------------------------------|
@@ -1112,6 +1114,213 @@ class DaData
     {
         try {
             $dadata = DaDataAddress::iplocate('46.226.227.20', 2);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+}
+
+```
+
+### Определение адреса по КЛАДР или ФИАС коду
+`DaDataAddress::id(string $ip, int $count, int $language)` определяетадреса по КЛАДР или ФИАС коду.
+
+Основные кейсы:
+- Поиск по КЛАДР-код, только для России;
+- ФИАС-код, только для России;
+- Идентификатор OpenStreetMap, только для Белоруссии;
+- Идентификатор GeoNames, для всех остальных стран.
+                                                                                                  
+Параметры вызова
+
+| **Название**      | **Тип**     | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:-----------:|:------------:|:-----------------:|:--------------------------------------------|
+| `id`              | `string`    | `false`      |                   | Текст запроса                               |
+| `count`           | `int`       | `true`       | 10                | Количество результатов (максимум — 20)      |
+| `language`        | `int`       | `true`       | 1                 | Язык ответа. Он может быть **русский** значение `language = 1` или **английским**, значение `language = 2`. Мы призываем использовать константы `Language::RU` или `Language::EN` | 
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataAddress;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData ID example
+    *
+    * @return void
+    */
+    public function idExample() : void
+    {
+        $dadata = DaDataAddress::id('9120b43f-2fae-4838-a144-85e43c2bfb29', 2, Language::RU);
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "г Москва, ул Снежная"
+      "unrestricted_value" => "129323, г Москва, р-н Свиблово, ул Снежная"
+      "data" => array:81 [
+        "postal_code" => "129323"
+        "country" => "Россия"
+        "country_iso_code" => "RU"
+        "federal_district" => "Центральный"
+        "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+        "region_kladr_id" => "7700000000000"
+        "region_iso_code" => "RU-MOW"
+        "region_with_type" => "г Москва"
+        "region_type" => "г"
+        "region_type_full" => "город"
+        "region" => "Москва"
+        "area_fias_id" => null
+        "area_kladr_id" => null
+        "area_with_type" => null
+        "area_type" => null
+        "area_type_full" => null
+        "area" => null
+        "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+        "city_kladr_id" => "7700000000000"
+        "city_with_type" => "г Москва"
+        "city_type" => "г"
+        "city_type_full" => "город"
+        "city" => "Москва"
+        "city_area" => "Северо-восточный"
+        "city_district_fias_id" => null
+        "city_district_kladr_id" => null
+        "city_district_with_type" => "р-н Свиблово"
+        "city_district_type" => "р-н"
+        "city_district_type_full" => "район"
+        "city_district" => "Свиблово"
+        "settlement_fias_id" => null
+        "settlement_kladr_id" => null
+        "settlement_with_type" => null
+        "settlement_type" => null
+        "settlement_type_full" => null
+        "settlement" => null
+        "street_fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29"
+        "street_kladr_id" => "77000000000268400"
+        "street_with_type" => "ул Снежная"
+        "street_type" => "ул"
+        "street_type_full" => "улица"
+        "street" => "Снежная"
+        "house_fias_id" => null
+        "house_kladr_id" => null
+        "house_type" => null
+        "house_type_full" => null
+        "house" => null
+        "block_type" => null
+        "block_type_full" => null
+        "block" => null
+        "flat_type" => null
+        "flat_type_full" => null
+        "flat" => null
+        "flat_area" => null
+        "square_meter_price" => null
+        "flat_price" => null
+        "postal_box" => null
+        "fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29"
+        "fias_code" => "77000000000000026840000"
+        "fias_level" => "7"
+        "fias_actuality_state" => "0"
+        "kladr_id" => "77000000000268400"
+        "geoname_id" => "524901"
+        "capital_marker" => "0"
+        "okato" => "45280580000"
+        "oktmo" => "45361000"
+        "tax_office" => "7716"
+        "tax_office_legal" => "7716"
+        "timezone" => null
+        "geo_lat" => "55.8523466"
+        "geo_lon" => "37.6469376"
+        "beltway_hit" => null
+        "beltway_distance" => null
+        "metro" => null
+        "qc_geo" => "2"
+        "qc_complete" => null
+        "qc_house" => null
+        "history_values" => null
+        "unparsed_parts" => null
+        "source" => null
+        "qc" => null
+      ]
+    ]
+  ]
+]
+
+
+```
+
+Описание ответа
+
+|       **Название**        |                       **Описание**                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------|
+| `value`                   | Адрес одной строкой (как показывается в списке подсказок)                                                     |
+| `unrestricted_value`      | Адрес одной строкой (полный, с индексом)                                                                      |
+| `data`                    | Вложенный массив данных аналагичный структуре выдачи метода `DaDataAddress::standardization(string $address)` |
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ                                                              |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `413`                | Слишком большая длина запроса или слишком много условий                                     |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataAddress;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData geolocate example
+    *
+    * @return void
+    */
+    public function geolocateExample() : void
+    {
+        try {
+            $dadata = DaDataAddress::id('9120b43f-2fae-4838-a144-85e43c2bfb29', 2, Language::RU);
 
             dd($dadata);
         } catch (\Exception $e) {

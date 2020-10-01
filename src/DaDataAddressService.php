@@ -116,4 +116,22 @@ class DaDataAddressService extends DaDataService
         ]);
     }
 
+    /**
+     * Define address by KLADR or FIAS id
+     *
+     * @param string $id
+     * @param int $count
+     * @param int $language
+     * @return array
+     * @throws \Exception
+     */
+    public function id(string $id, int $count = 10, int $language = Language::RU) : array
+    {
+        return $this->suggestApi()->post('rs/findById/address', [
+            'query'     => $id,
+            'count'     => $count,
+            'language'  => Language::$map[$language] ?? Language::$map[Language::RU],
+        ]);
+    }
+
 }
