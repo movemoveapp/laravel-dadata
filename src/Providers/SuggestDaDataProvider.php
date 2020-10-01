@@ -77,9 +77,26 @@ class SuggestDaDataProvider
             'Authorization' => sprintf('Token %s', $this->token),
             'X-Secret'      => $this->secret,
         ];
-        $url    = sprintf('%s/%s/%s', $this->api, $this->v, $method);
+        $url     = sprintf('%s/%s/%s', $this->api, $this->v, $method);
 
-        return $this->getPostData($headers, $url, $data, $this->timeout);
+        return $this->postData($headers, $url, $data, $this->timeout);
+    }
+
+    /**
+     * @param string $method
+     * @param array $data
+     * @return array
+     * @throws \Exception
+     */
+    public function get(string $method, array $data = []) : array
+    {
+        $headers = [
+            'Accept'        => $this->accept,
+            'Authorization' => sprintf('Token %s', $this->token),
+        ];
+        $url     = sprintf('%s/%s/%s', $this->api, $this->v, $method);
+
+        return $this->getData($headers, $url, $data, $this->timeout);
     }
 
 

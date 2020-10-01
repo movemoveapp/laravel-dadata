@@ -43,6 +43,7 @@ class CleanerDaDataProvider
 
     /**
      * CleanerDaDataProvider constructor.
+     *
      * @param string $token
      * @param string $secret
      * @param int $timeout
@@ -72,7 +73,7 @@ class CleanerDaDataProvider
         ];
         $url    = sprintf('%s/%s/%s', $this->api, $this->v, $method);
 
-        return $this->getPostData($headers, $url, $data, $this->timeout);
+        return $this->postData($headers, $url, $data, $this->timeout);
     }
 
 
