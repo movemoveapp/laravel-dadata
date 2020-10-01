@@ -32,7 +32,8 @@ DADATA_TIMEOUT=10
   - [Определение ближайшего отделения Почты России по адресу](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%BB%D0%B8%D0%B6%D0%B0%D0%B9%D1%88%D0%B5%D0%B3%D0%BE-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D1%83)
   - [Определение отделения Почты России по почтовому индексу](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%83)
   - [Определение отделения Почты России по координатам](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
-  - [Определение идентификатора города в СДЭК, Boxberry и DPD]()
+  - [Определение идентификатора города в СДЭК, Boxberry и DPD](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0-%D0%B2-%D1%81%D0%B4%D1%8D%D0%BA-boxberry-%D0%B8-dpd)
+  - [Адрес в ФИАС по идентификатору]()
 
 ### Стандартизация адреса
 `DaDataAddress::standardization(string $address)` - разбивает адрес из строки по отдельным полям (регион, город, улица, дом, квартира) согласно КЛАДР/ФИАС. Определяет почтовый индекс, часовой пояс, ближайшее метро, координаты, стоимость квартиры и другую информацию об адресе.
@@ -1828,3 +1829,190 @@ array:1 [
 | `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
 
 Более детальную информацию вы можете получить из сообщения исключения.
+
+### Адрес в ФИАС по идентификатору
+`DaDataAddress::fias(string $code)` Находит адрес в справочнике ФИАС по коду КЛАДР или ФИАС.
+
+ФИАС-коды домов иногда меняются, а метод ищет только по актуальным кодам. Поэтому рекомендуем помимо ФИАС-кода дома сохранять адрес одной строкой — иначе не получится восстановить адрес, когда ФИАС-код изменится.
+
+По КЛАДР-коду метод ищет только до улицы, потому что в ФИАС нет КЛАДР-кодов домов.
+
+
+Параметры вызова
+
+| **Название**      | **Тип**  | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:--------:|:------------:|:-----------------:|:--------------------------------------------|
+| `code`            | `string` | `false`      |                   | ФИАС код                                    |
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataAddress;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData get city by FIAS code
+    *
+    * @return void
+    */
+    public function fiasExample() : void
+    {
+        $dadata = DaDataAddress::fias('9120b43f-2fae-4838-a144-85e43c2bfb29');
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "г Москва, ул Снежная"
+      "unrestricted_value" => "129323, г Москва, ул Снежная"
+      "data" => array:64 [
+        "postal_code" => "129323"
+        "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+        "region_kladr_id" => "7700000000000"
+        "region_with_type" => "г Москва"
+        "region_type" => "г"
+        "region_type_full" => "город"
+        "region" => "Москва"
+        "area_fias_id" => null
+        "area_kladr_id" => null
+        "area_with_type" => null
+        "area_type" => null
+        "area_type_full" => null
+        "area" => null
+        "city_fias_id" => null
+        "city_kladr_id" => null
+        "city_with_type" => null
+        "city_type" => null
+        "city_type_full" => null
+        "city" => null
+        "city_district_fias_id" => null
+        "city_district_kladr_id" => null
+        "city_district_with_type" => null
+        "city_district_type" => null
+        "city_district_type_full" => null
+        "city_district" => null
+        "settlement_fias_id" => null
+        "settlement_kladr_id" => null
+        "settlement_with_type" => null
+        "settlement_type" => null
+        "settlement_type_full" => null
+        "settlement" => null
+        "planning_structure_fias_id" => null
+        "planning_structure_kladr_id" => null
+        "planning_structure_with_type" => null
+        "planning_structure_type" => null
+        "planning_structure_type_full" => null
+        "planning_structure" => null
+        "street_fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29"
+        "street_kladr_id" => "77000000000268400"
+        "street_with_type" => "ул Снежная"
+        "street_type" => "ул"
+        "street_type_full" => "улица"
+        "street" => "Снежная"
+        "house_fias_id" => null
+        "house_kladr_id" => null
+        "house_type" => null
+        "house" => null
+        "block" => null
+        "building_type" => null
+        "building" => null
+        "fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29"
+        "fias_code" => "7700000000000002684"
+        "fias_level" => "7"
+        "fias_actuality_state" => "0"
+        "kladr_id" => "77000000000268400"
+        "capital_marker" => "0"
+        "okato" => "45280580000"
+        "oktmo" => "45361000"
+        "cadastral_number" => null
+        "tax_office" => "7716"
+        "tax_office_legal" => "7716"
+        "history_values" => null
+        "source" => null
+        "qc" => null
+      ]
+    ]
+  ]
+]
+
+
+```
+
+Описание ответа
+
+|       **Название**        |                       **Описание**                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------|
+| `value`                   | Адрес одной строкой (как показывается в списке подсказок)                                                     |
+| `unrestricted_value`      | Адрес одной строкой (полный, с индексом)                                                                      |
+| `data`                    | Вложенный массив данных аналагичный структуре выдачи метода `DaDataAddress::standardization(string $address)` |
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ                                                              |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `413`                | Слишком большая длина запроса или слишком много условий                                     |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataAddress;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData define city by FIAS code
+    *
+    * @return void
+    */
+    public function fiasExample() : void
+    {
+        try {
+            $dadata = DaDataAddress::fias('9120b43f-2fae-4838-a144-85e43c2bfb29');
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+}
+
+```

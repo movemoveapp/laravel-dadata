@@ -205,4 +205,16 @@ class DaDataAddressService extends DaDataService
         return $this->suggestApi()->post('rs/findById/delivery', ['query' => $code]);
     }
 
+    /**
+     * Get address by FIAS code
+     *
+     * @param string $code
+     * @return array
+     * @throws \Exception
+     */
+    public function fias(string $code) : array
+    {
+        return $this->suggestApi()->post('rs/findById/fias', ['query' => $code]);
+    }
+
 }
