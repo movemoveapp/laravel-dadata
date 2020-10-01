@@ -192,4 +192,17 @@ class DaDataAddressService extends DaDataService
         ]);
     }
 
+
+    /**
+     * City ID in the delivery companies
+     *
+     * @param string $code
+     * @return array
+     * @throws \Exception
+     */
+    public function delivery(string $code) : array
+    {
+        return $this->suggestApi()->post('rs/findById/delivery', ['query' => $code]);
+    }
+
 }
