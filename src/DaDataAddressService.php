@@ -134,4 +134,62 @@ class DaDataAddressService extends DaDataService
         ]);
     }
 
+    /**
+     * Find postal unit by address
+     *
+     * @param string $address
+     * @param int $count
+     * @param int $language
+     * @return array
+     * @throws \Exception
+     */
+    public function postalUnitByAddress(string $address, int $count = 10, int $language = Language::RU) : array
+    {
+        return $this->suggestApi()->post('rs/suggest/postal_unit', [
+            'query'     => $address,
+            'count'     => $count,
+            'language'  => Language::$map[$language] ?? Language::$map[Language::RU],
+        ]);
+    }
+
+    /**
+     * Find postal unit by postal code
+     *
+     * @param string $code
+     * @param int $count
+     * @param int $language
+     * @return array
+     * @throws \Exception
+     */
+    public function postalUnitById(int $code, int $count = 10, int $language = Language::RU) : array
+    {
+        return $this->suggestApi()->post('rs/findById/postal_unit', [
+            'query'     => $code,
+            'count'     => $count,
+            'language'  => Language::$map[$language] ?? Language::$map[Language::RU],
+        ]);
+    }
+
+    /**
+     * Find by postal unit by GEO location
+     *
+     * @param float $lat
+     * @param float $lon
+     * @param int $radius_meters
+     * @param int $count
+     * @param int $language
+     * @return array
+     * @throws \Exception
+     */
+    public function postalUnitByGeoLocate(float $lat, float $lon, int $radius_meters = 1000, int $count = 10, int $language = Language::RU) : array
+    {
+        return $this->suggestApi()->post('rs/geolocate/postal_unit', [
+            'lat'           => $lat,
+            'lon'           => $lon,
+            'radius_meters' => $radius_meters,
+            'count'         => $count,
+            'language'      => Language::$map[$language] ?? Language::$map[Language::RU],
+        ]);
+    }
+
 }
