@@ -19,8 +19,14 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "MoveMoveIo\\DaData\\Tests": "tests/"
+            "MoveMoveIo\\DaData\\Tests\\": "tests/"
         }
     },
-    "require": {}
+    "require": {
+        "php": "^7.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0@dev",
+        "phpunit/phpunit": "^9.5@dev"
+    }
 }
