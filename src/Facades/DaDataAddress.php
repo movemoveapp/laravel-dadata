@@ -10,15 +10,14 @@ use Illuminate\Support\Facades\Facade;
  */
 class DaDataAddress extends Facade
 {
-
     /**
      * Get the registered name of the component.
      *
      * @return string
      */
-    protected static function getFacadeAccessor() : string
+    protected static function getFacadeAccessor()
     {
         return 'da_data_address';
     }
-
 }
+

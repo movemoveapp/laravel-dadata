@@ -2,25 +2,21 @@
 
 namespace MoveMoveIo\DaData\Tests;
 
-use MoveMoveIo\DaData\DaDataAddressService;
-use MoveMoveIo\DaData\DaDataServiceProvider;
-use MoveMoveIo\DaData\Facades\DaDataAddress;
-use Orchestra\Testbench\TestCase as Orchestra;
-
-abstract class TestCase extends Orchestra
+class TestCase extends \Orchestra\Testbench\TestCase
 {
 
     protected function getPackageProviders($app)
     {
         return [
-            DaDataServiceProvider::class,
+            'MoveMoveIo\DaData\DaDataServiceProvider'
         ];
     }
 
     protected function getPackageAliases($app)
     {
         return [
-            'DaDataAddress' => DaDataAddressService::class,
+            'DaDataAddress' => 'MoveMoveIo\DaData\Facades\DaDataAddress',
         ];
     }
+
 }

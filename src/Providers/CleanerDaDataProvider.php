@@ -76,6 +76,4 @@ class CleanerDaDataProvider
         return $this->postData($headers, $url, $data, $this->timeout);
     }
 
-
-
 }

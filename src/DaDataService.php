@@ -42,14 +42,15 @@ class DaDataService
      */
     public function __construct()
     {
-        /**
-        $this->token   = config('dadata.token') ?? env('DADATA_TOKEN', null);
-        $this->secret  = config('dadata.secret') ?? env('DADATA_SECRET', null);
-        $this->timeout = config('dadata.timeout') ?? env('DADATA_TIMEOUT', 10);
-         */
-        $this->token   = env('DADATA_TOKEN', null);
-        $this->secret  = env('DADATA_SECRET', null);
-        $this->timeout = env('DADATA_TIMEOUT', 10);
+        if (file_exists(config_path() . '/dadata.php')) {
+            $this->token = config('dadata.token');
+            $this->secret = config('dadata.secret');
+            $this->timeout = config('dadata.timeout');
+        } else {
+            $this->token = env('DADATA_TOKEN', null);
+            $this->secret = env('DADATA_SECRET', null);
+            $this->timeout = env('DADATA_TIMEOUT', 10);
+        }
     }
 
     /**

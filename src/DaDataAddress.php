@@ -5,10 +5,10 @@ namespace MoveMoveIo\DaData;
 use MoveMoveIo\DaData\Enums\Language;
 
 /**
- * Class DaDataAddressService
+ * Class DaDataAddress
  * @package MoveMoveIo\DaData
  */
-class DaDataAddressService extends DaDataService
+class DaDataAddress extends DaDataService
 {
 
     /**
@@ -73,13 +73,13 @@ class DaDataAddressService extends DaDataService
      *
      * Returns all information about the address by coordinates.
      * Works for homes, streets and cities.
-     *
      * @param float $lat
      * @param float $lon
      * @param int $count
      * @param int $radius_meters
      * @param int $language
      * @return array
+     * @throws \Exception
      */
     public function geolocate(
         float   $lat,
