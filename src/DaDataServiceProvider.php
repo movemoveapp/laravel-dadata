@@ -18,9 +18,11 @@ class DaDataServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('da_data_address', function () {
-            return new DaDataAddressService();
+        $this->app->singleton('da_data_address', function () {
+            return new DaDataAddress();
         });
+
+        $this->app->alias('da_data_address', DaDataAddress::class);
     }
 
     /**
