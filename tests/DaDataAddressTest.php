@@ -41,7 +41,7 @@ class DaDataAddressTest extends TestCase
     }
 
     /**
-     * @test 
+     * @test
      */
     public function testIpLocateAddress()
     {
@@ -51,6 +51,118 @@ class DaDataAddressTest extends TestCase
         );
     }
 
+    /**
+     * @test
+     */
+    public function testIdAddress()
+    {
+        $this->assertSame(
+            DaDataAddress::id('9120b43f-2fae-4838-a144-85e43c2bfb29', 1),
+            $this->IdAddressProvider()
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function IdAddressProvider() : array
+    {
+        return [
+            "suggestions" => [
+                [
+                    "value" => "г Москва, ул Снежная",
+                    "unrestricted_value" => "129323, г Москва, р-н Свиблово, ул Снежная",
+                    "data" => [
+                        "postal_code" => "129323",
+                        "country" => "Россия",
+                        "country_iso_code" => "RU",
+                        "federal_district" => "Центральный",
+                        "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
+                        "region_kladr_id" => "7700000000000",
+                        "region_iso_code" => "RU-MOW",
+                        "region_with_type" => "г Москва",
+                        "region_type" => "г",
+                        "region_type_full" => "город",
+                        "region" => "Москва",
+                        "area_fias_id" => null,
+                        "area_kladr_id" => null,
+                        "area_with_type" => null,
+                        "area_type" => null,
+                        "area_type_full" => null,
+                        "area" => null,
+                        "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
+                        "city_kladr_id" => "7700000000000",
+                        "city_with_type" => "г Москва",
+                        "city_type" => "г",
+                        "city_type_full" => "город",
+                        "city" => "Москва",
+                        "city_area" => "Северо-восточный",
+                        "city_district_fias_id" => null,
+                        "city_district_kladr_id" => null,
+                        "city_district_with_type" => "р-н Свиблово",
+                        "city_district_type" => "р-н",
+                        "city_district_type_full" => "район",
+                        "city_district" => "Свиблово",
+                        "settlement_fias_id" => null,
+                        "settlement_kladr_id" => null,
+                        "settlement_with_type" => null,
+                        "settlement_type" => null,
+                        "settlement_type_full" => null,
+                        "settlement" => null,
+                        "street_fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29",
+                        "street_kladr_id" => "77000000000268400",
+                        "street_with_type" => "ул Снежная",
+                        "street_type" => "ул",
+                        "street_type_full" => "улица",
+                        "street" => "Снежная",
+                        "house_fias_id" => null,
+                        "house_kladr_id" => null,
+                        "house_type" => null,
+                        "house_type_full" => null,
+                        "house" => null,
+                        "block_type" => null,
+                        "block_type_full" => null,
+                        "block" => null,
+                        "flat_type" => null,
+                        "flat_type_full" => null,
+                        "flat" => null,
+                        "flat_area" => null,
+                        "square_meter_price" => null,
+                        "flat_price" => null,
+                        "postal_box" => null,
+                        "fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29",
+                        "fias_code" => "77000000000000026840000",
+                        "fias_level" => "7",
+                        "fias_actuality_state" => "0",
+                        "kladr_id" => "77000000000268400",
+                        "geoname_id" => "524901",
+                        "capital_marker" => "0",
+                        "okato" => "45280580000",
+                        "oktmo" => "45361000",
+                        "tax_office" => "7716",
+                        "tax_office_legal" => "7716",
+                        "timezone" => null,
+                        "geo_lat" => "55.8523466",
+                        "geo_lon" => "37.6469376",
+                        "beltway_hit" => null,
+                        "beltway_distance" => null,
+                        "metro" => null,
+                        "qc_geo" => "2",
+                        "qc_complete" => null,
+                        "qc_house" => null,
+                        "history_values" => null,
+                        "unparsed_parts" => null,
+                        "source" => null,
+                        "qc" => null,
+                    ],
+                ],
+            ]
+        ];
+    }
+
+    /**
+     * @return array|array[]
+     */
     public function Ipv4AddressProvider() : array
     {
         return [
