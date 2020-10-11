@@ -8,17 +8,6 @@ class DaDataAddressTest extends TestCase
 {
 
     /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function testBasicTest()
-    {
-        $this->assertTrue(true);
-    }
-
-
-    /**
      * @test
      **/
     public function testStandardizationAddressFromString()
@@ -38,6 +27,115 @@ class DaDataAddressTest extends TestCase
             DaDataAddress::prompt('москва хабар', 2),
             $this->PromptAddressProvider()
         );
+    }
+
+    /**
+     * @test
+     */
+    public function testGeolocationAddress()
+    {
+        $this->assertSame(
+            DaDataAddress::geolocate(55.878, 37.653, 1),
+            $this->GeolocationAddressProvider()
+        );
+    }
+
+    /**
+     * @return array|\array[][]
+     */
+    public function GeolocationAddressProvider() : array
+    {
+        return [
+            "suggestions" => [
+                [
+                    "value" => "г Москва, ул Сухонская, д 11",
+                    "unrestricted_value" => "127642, г Москва, р-н Северное Медведково, ул Сухонская, д 11",
+                    "data" => [
+                        "postal_code" => "127642",
+                        "country" => "Россия",
+                        "country_iso_code" => "RU",
+                        "federal_district" => "Центральный",
+                        "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
+                        "region_kladr_id" => "7700000000000",
+                        "region_iso_code" => "RU-MOW",
+                        "region_with_type" => "г Москва",
+                        "region_type" => "г",
+                        "region_type_full" => "город",
+                        "region" => "Москва",
+                        "area_fias_id" => null,
+                        "area_kladr_id" => null,
+                        "area_with_type" => null,
+                        "area_type" => null,
+                        "area_type_full" => null,
+                        "area" => null,
+                        "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
+                        "city_kladr_id" => "7700000000000",
+                        "city_with_type" => "г Москва",
+                        "city_type" => "г",
+                        "city_type_full" => "город",
+                        "city" => "Москва",
+                        "city_area" => "Северо-восточный",
+                        "city_district_fias_id" => null,
+                        "city_district_kladr_id" => null,
+                        "city_district_with_type" => "р-н Северное Медведково",
+                        "city_district_type" => "р-н",
+                        "city_district_type_full" => "район",
+                        "city_district" => "Северное Медведково",
+                        "settlement_fias_id" => null,
+                        "settlement_kladr_id" => null,
+                        "settlement_with_type" => null,
+                        "settlement_type" => null,
+                        "settlement_type_full" => null,
+                        "settlement" => null,
+                        "street_fias_id" => "95dbf7fb-0dd4-4a04-8100-4f6c847564b5",
+                        "street_kladr_id" => "77000000000283600",
+                        "street_with_type" => "ул Сухонская",
+                        "street_type" => "ул",
+                        "street_type_full" => "улица",
+                        "street" => "Сухонская",
+                        "house_fias_id" => "5ee84ac0-eb9a-4b42-b814-2f5f7c27c255",
+                        "house_kladr_id" => "7700000000028360004",
+                        "house_type" => "д",
+                        "house_type_full" => "дом",
+                        "house" => "11",
+                        "block_type" => null,
+                        "block_type_full" => null,
+                        "block" => null,
+                        "flat_type" => null,
+                        "flat_type_full" => null,
+                        "flat" => null,
+                        "flat_area" => null,
+                        "square_meter_price" => null,
+                        "flat_price" => null,
+                        "postal_box" => null,
+                        "fias_id" => "5ee84ac0-eb9a-4b42-b814-2f5f7c27c255",
+                        "fias_code" => "77000000000000028360004",
+                        "fias_level" => "8",
+                        "fias_actuality_state" => "0",
+                        "kladr_id" => "7700000000028360004",
+                        "geoname_id" => "524901",
+                        "capital_marker" => "0",
+                        "okato" => "45280583000",
+                        "oktmo" => "45362000",
+                        "tax_office" => "7715",
+                        "tax_office_legal" => "7715",
+                        "timezone" => null,
+                        "geo_lat" => "55.8782557",
+                        "geo_lon" => "37.65372",
+                        "beltway_hit" => null,
+                        "beltway_distance" => null,
+                        "metro" => null,
+                        "qc_geo" => "0",
+                        "qc_complete" => null,
+                        "qc_house" => null,
+                        "history_values" => null,
+                        "unparsed_parts" => null,
+                        "source" => null,
+                        "qc" => null,
+                    ],
+                ]
+            ]
+        ];
     }
 
     /**
