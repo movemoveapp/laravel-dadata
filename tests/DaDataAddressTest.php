@@ -96,6 +96,39 @@ class DaDataAddressTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function testDeliveryAddress()
+    {
+        $this->assertSame(
+            DaDataAddress::delivery('3100400100000'),
+            $this->DeliveryProvider()
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function DeliveryProvider() : array
+    {
+        return [
+            "suggestions" => [
+                [
+                    "value" => "3100400100000",
+                    "unrestricted_value" => "fe7eea4a-875a-4235-aa61-81c2a37a0440",
+                    "data" => [
+                        "kladr_id" => "3100400100000",
+                        "fias_id" => "fe7eea4a-875a-4235-aa61-81c2a37a0440",
+                        "boxberry_id" => "01929",
+                        "cdek_id" => "344",
+                        "dpd_id" => "196006461",
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    /**
      * @return array|\array[][]
      */
     public function PostalUnitByGeoCoordinatesProvider() : array
