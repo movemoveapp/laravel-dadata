@@ -107,6 +107,98 @@ class DaDataAddressTest extends TestCase
     }
 
     /**
+     * @test 
+     */
+    public function testFiasAddress()
+    {
+        $this->assertSame(
+            DaDataAddress::fias('9120b43f-2fae-4838-a144-85e43c2bfb29'),
+            $this->FiasAddressProvider()
+        );
+    }
+
+    /**
+     * @return array|\array[][]
+     */
+    public function FiasAddressProvider() : array
+    {
+        return [
+            "suggestions" => [
+                [
+                    "value" => "г Москва, ул Снежная",
+                    "unrestricted_value" => "129323, г Москва, ул Снежная",
+                    "data" => [
+                        "postal_code" => "129323",
+                        "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
+                        "region_kladr_id" => "7700000000000",
+                        "region_with_type" => "г Москва",
+                        "region_type" => "г",
+                        "region_type_full" => "город",
+                        "region" => "Москва",
+                        "area_fias_id" => null,
+                        "area_kladr_id" => null,
+                        "area_with_type" => null,
+                        "area_type" => null,
+                        "area_type_full" => null,
+                        "area" => null,
+                        "city_fias_id" => null,
+                        "city_kladr_id" => null,
+                        "city_with_type" => null,
+                        "city_type" => null,
+                        "city_type_full" => null,
+                        "city" => null,
+                        "city_district_fias_id" => null,
+                        "city_district_kladr_id" => null,
+                        "city_district_with_type" => null,
+                        "city_district_type" => null,
+                        "city_district_type_full" => null,
+                        "city_district" => null,
+                        "settlement_fias_id" => null,
+                        "settlement_kladr_id" => null,
+                        "settlement_with_type" => null,
+                        "settlement_type" => null,
+                        "settlement_type_full" => null,
+                        "settlement" => null,
+                        "planning_structure_fias_id" => null,
+                        "planning_structure_kladr_id" => null,
+                        "planning_structure_with_type" => null,
+                        "planning_structure_type" => null,
+                        "planning_structure_type_full" => null,
+                        "planning_structure" => null,
+                        "street_fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29",
+                        "street_kladr_id" => "77000000000268400",
+                        "street_with_type" => "ул Снежная",
+                        "street_type" => "ул",
+                        "street_type_full" => "улица",
+                        "street" => "Снежная",
+                        "house_fias_id" => null,
+                        "house_kladr_id" => null,
+                        "house_type" => null,
+                        "house" => null,
+                        "block" => null,
+                        "building_type" => null,
+                        "building" => null,
+                        "fias_id" => "9120b43f-2fae-4838-a144-85e43c2bfb29",
+                        "fias_code" => "7700000000000002684",
+                        "fias_level" => "7",
+                        "fias_actuality_state" => "0",
+                        "kladr_id" => "77000000000268400",
+                        "capital_marker" => "0",
+                        "okato" => "45280580000",
+                        "oktmo" => "45361000",
+                        "cadastral_number" => null,
+                        "tax_office" => "7716",
+                        "tax_office_legal" => "7716",
+                        "history_values" => null,
+                        "source" => null,
+                        "qc" => null,
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    /**
      * @return array
      */
     public function DeliveryProvider() : array
