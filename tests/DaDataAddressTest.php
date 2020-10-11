@@ -63,6 +63,122 @@ class DaDataAddressTest extends TestCase
     }
 
     /**
+     * @test
+     */
+    public function testGetPostalUnitByAddress()
+    {
+        $this->assertSame(
+            DaDataAddress::postalUnitByAddress('дежнева 2а', 1),
+            $this->PostalUnitByAddreessProvider()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testGetPostalUnitById()
+    {
+        $this->assertSame(
+            DaDataAddress::postalUnitById('127642', 1),
+            $this->PostalUnitByAddreessProvider()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function testGetPostalUnitByGeoCoorinates()
+    {
+        $this->assertSame(
+            DaDataAddress::postalUnitByGeoLocate(55.878, 37.653, 1000, 2),
+            $this->PostalUnitByGeoCoordinatesProvider()
+        );
+    }
+
+    /**
+     * @return array|\array[][]
+     */
+    public function PostalUnitByGeoCoordinatesProvider() : array
+    {
+        return [
+            "suggestions" => [
+                [
+                    "value" => "127642",
+                    "unrestricted_value" => "г Москва, проезд Дежнёва, д 2А",
+                    "data" => [
+                        "postal_code" => "127642",
+                        "is_closed" => false,
+                        "type_code" => "ГОПС",
+                        "address_str" => "г Москва, проезд Дежнёва, д 2А",
+                        "address_kladr_id" => "7700000000000",
+                        "address_qc" => "0",
+                        "geo_lat" => 55.872127,
+                        "geo_lon" => 37.651223,
+                        "schedule_mon" => "08:00-20:00",
+                        "schedule_tue" => "08:00-20:00",
+                        "schedule_wed" => "08:00-20:00",
+                        "schedule_thu" => "08:00-20:00",
+                        "schedule_fri" => "08:00-20:00",
+                        "schedule_sat" => "09:00-18:00",
+                        "schedule_sun" => "09:00-18:00",
+                    ],
+                ], [
+                    "value" => "127221",
+                    "unrestricted_value" => "г Москва, ул Полярная, д 16 к 1",
+                    "data" => [
+                        "postal_code" => "127221",
+                        "is_closed" => false,
+                        "type_code" => "ГОПС",
+                        "address_str" => "г Москва, ул Полярная, д 16 к 1",
+                        "address_kladr_id" => "7700000000000",
+                        "address_qc" => "0",
+                        "geo_lat" => 55.876607,
+                        "geo_lon" => 37.637308,
+                        "schedule_mon" => "08:00-20:00",
+                        "schedule_tue" => "08:00-20:00",
+                        "schedule_wed" => "08:00-20:00",
+                        "schedule_thu" => "08:00-20:00",
+                        "schedule_fri" => "08:00-20:00",
+                        "schedule_sat" => "09:00-18:00",
+                        "schedule_sun" => "09:00-18:00",
+                    ]
+                ]
+            ]
+        ];
+    }
+
+    /**
+     * @return array|array[]
+     */
+    public function PostalUnitByAddreessProvider() : array
+    {
+        return [
+            "suggestions" => [
+            [
+                "value" => "127642",
+                "unrestricted_value" => "г Москва, проезд Дежнёва, д 2А",
+                "data" => [
+                    "postal_code" => "127642",
+                    "is_closed" => false,
+                    "type_code" => "ГОПС",
+                    "address_str" => "г Москва, проезд Дежнёва, д 2А",
+                    "address_kladr_id" => "7700000000000",
+                    "address_qc" => "0",
+                    "geo_lat" => 55.872127,
+                    "geo_lon" => 37.651223,
+                    "schedule_mon" => "08:00-20:00",
+                    "schedule_tue" => "08:00-20:00",
+                    "schedule_wed" => "08:00-20:00",
+                    "schedule_thu" => "08:00-20:00",
+                    "schedule_fri" => "08:00-20:00",
+                    "schedule_sat" => "09:00-18:00",
+                    "schedule_sun" => "09:00-18:00",
+                ],
+            ]]
+        ];
+    }
+
+    /**
      * @return array
      */
     public function IdAddressProvider() : array
