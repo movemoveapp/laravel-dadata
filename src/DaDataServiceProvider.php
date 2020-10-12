@@ -26,8 +26,13 @@ class DaDataServiceProvider extends ServiceProvider
             return new DaDataName();
         });
 
+        $this->app->singleton('da_data_email', function () {
+            return new DaDataEmail();
+        });
+
         $this->app->alias('da_data_address', DaDataAddress::class);
         $this->app->alias('da_data_name', DaDataName::class);
+        $this->app->alias('da_data_email', DaDataEmail::class);
     }
 
     /**

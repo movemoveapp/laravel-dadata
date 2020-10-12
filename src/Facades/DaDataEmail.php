@@ -18,7 +18,7 @@ class DaDataEmail extends Facade
      */
     protected static function getFacadeAccessor() : string
     {
-        return 'dadata_passport';
+        return 'da_data_email';
     }
 
 }

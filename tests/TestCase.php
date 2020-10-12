@@ -17,6 +17,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         return [
             'DaDataAddress' => 'MoveMoveIo\DaData\Facades\DaDataAddress',
             'DaDataName'    => 'MoveMoveIo\DaData\Facades\DaDataName',
+            'DaDataEmail'    => 'MoveMoveIo\DaData\Facades\DaDataEmail',
         ];
     }
 

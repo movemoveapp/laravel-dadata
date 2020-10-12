@@ -25,20 +25,25 @@ DADATA_TIMEOUT=10
 
 ## Методы
 
+https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC
 - **Работа с адресами**
   - [Стандартизация адреса](https://github.com/movemove-io/laravel-dadata#%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0)
   - [Подсказки по адресам](https://github.com/movemove-io/laravel-dadata#%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D0%BC)
-  - [Определение адреса по координатам](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
-  - [Определение адреса по IP](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-ip)
-  - [Определение адреса по КЛАДР или ФИАС коду](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B0%D0%B4%D1%80-%D0%B8%D0%BB%D0%B8-%D1%84%D0%B8%D0%B0%D1%81-%D0%BA%D0%BE%D0%B4%D1%83)
-  - [Определение ближайшего отделения Почты России по адресу](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%BB%D0%B8%D0%B6%D0%B0%D0%B9%D1%88%D0%B5%D0%B3%D0%BE-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D1%83)
-  - [Определение отделения Почты России по почтовому индексу](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%83)
-  - [Определение отделения Почты России по координатам](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
-  - [Определение идентификатора города в СДЭК, Boxberry и DPD](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0-%D0%B2-%D1%81%D0%B4%D1%8D%D0%BA-boxberry-%D0%B8-dpd)
-  - [Адрес в ФИАС по идентификатору](https://github.com/movemove-io/laravel-dadata/tree/Feature/Addresses#%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%B2-%D1%84%D0%B8%D0%B0%D1%81-%D0%BF%D0%BE-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%83)
+  - [Определение адреса по координатам](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
+  - [Определение адреса по IP](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-ip)
+  - [Определение адреса по КЛАДР или ФИАС коду](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B0%D0%B4%D1%80-%D0%B8%D0%BB%D0%B8-%D1%84%D0%B8%D0%B0%D1%81-%D0%BA%D0%BE%D0%B4%D1%83)
+  - [Определение ближайшего отделения Почты России по адресу](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%BB%D0%B8%D0%B6%D0%B0%D0%B9%D1%88%D0%B5%D0%B3%D0%BE-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D1%83)
+  - [Определение отделения Почты России по почтовому индексу](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%83)
+  - [Определение отделения Почты России по координатам](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
+  - [Определение идентификатора города в СДЭК, Boxberry и DPD](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0-%D0%B2-%D1%81%D0%B4%D1%8D%D0%BA-boxberry-%D0%B8-dpd)
+  - [Адрес в ФИАС по идентификатору](https://github.com/movemove-io/laravel-dadata#%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%B2-%D1%84%D0%B8%D0%B0%D1%81-%D0%BF%D0%BE-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%83)
 - **Работа с именами**
-  - [ФИО]()
-  - [Автодополнение при вводе («подсказки»)]()
+  - [ФИО](https://github.com/movemove-io/laravel-dadata#%D1%84%D0%B8%D0%BE)
+  - [Автодополнение при вводе («подсказки»)](https://github.com/movemove-io/laravel-dadata#%D0%B0%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B5-%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8)
+- **Работа с электорнными (email) адресами**
+  - [Email](https://github.com/movemove-io/laravel-dadata#)
+  - [Подсказоки по email](https://github.com/movemove-io/laravel-dadata#)
+
 
 ## Работа с адресами
 ### Стандартизация адреса
@@ -2180,7 +2185,7 @@ class DaData
 
 Подсказки не подходят для автоматической обработки ФИО. Они предлагают варианты, но не гарантируют, что угадали правильно. Поэтому окончательное решение всегда должен принимать человек.
 
-Для автоматической обработки, транслитерации и склонения по падежам используйте `DaDataName::fias(string $name)` метод [ФИО](), описание которого вы найдете выше. 
+Для автоматической обработки, транслитерации и склонения по падежам используйте `DaDataName::fias(string $name)` метод [ФИО](https://github.com/movemove-io/laravel-dadata#%D1%84%D0%B8%D0%BE), описание которого вы найдете выше. 
 
 Параметры вызова
 
@@ -2337,7 +2342,7 @@ class DaData
 {
 
    /**
-    * DaData define city by FIAS code
+    * DaData name prompt
     *
     * @return void
     */
@@ -2345,6 +2350,297 @@ class DaData
     {
         try {
             $dadata = DaDataName::prompt('Викто', 2, Gender::UNKNOWN, [Parts::NAME]);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+}
+
+```
+
+## Работа с электронными (email) адресами
+### Email
+`DaDataName::email(string $email)` Исправляет опечатки и проверяет на одноразовый адрес. Классифицирует адреса на личные, корпоративные и «ролевые».
+
+Основные кейсы
+- Проверяет формат адреса.
+- Исправляет распространённые опечатки.
+- Проверяет, не «одноразовый» ли адрес.
+- Классифицирует адреса на личные (`@mail.ru`, `@yandex.ru`), корпоративные (`@myshop.ru`) и «ролевые» (`info@`, `support@`).
+
+Параметры вызова
+
+| **Название**      | **Тип**  | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:--------:|:------------:|:-----------------:|:--------------------------------------------|
+| `email`           | `string` | `false`      |                   | Email                                       |
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataEmail;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData email
+    *
+    * @return void
+    */
+    public function emailExample() : void
+    {
+        $dadata = DaDataEmail::standardization('serega@yandex/ru');
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Пример ответа
+
+```php
+array:1 [
+  0 => array:6 [
+    "source" => "serega@yandex/ru"
+    "email" => "serega@yandex.ru"
+    "local" => "serega"
+    "domain" => "yandex.ru"
+    "type" => "PERSONAL"
+    "qc" => 4
+  ]
+]
+
+
+```
+
+Описание ответа
+
+|       **Название**        |                       **Описание**                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------|
+| `source`                  | Исходный email                                                                                                |
+| `email`                   | Стандартизованный email                                                                                       |
+| `local`                   | Локальная часть адреса (то, что до `@`)                                                                       |
+| `domain`                  | Домен (то, что послу `@`)                                                                                     |
+| `type`                    | Тип адреса. `PERSONAL` — личный (@mail.ru, @yandex.ru). `CORPORATE` — корпоративный (@myshop.ru). `ROLE` — «ролевой» (info@, support@). `DISPOSABLE` — одноразовый (@temp-mail.ru) |
+| `qc`                      | Код проверки                                                                                                  |
+
+Коды проверки (параметр ответа `qc`)
+
+| `qc`  | **Нужна ручная проверка?** |              **Описание**                                                                              |
+|:-----:|:---------------------------|:-------------------------------------------------------------------------------------------------------|
+| **0** | нет                        | Корректное значение. Соответствует общепринятым правилам, реальное существование адреса не проверяется |
+| **2** | нет                        | Пустое или заведомо «мусорное» значение                                                                |
+| **3** | нет                        | «Одноразовый» адрес. Домены 10minutemail.com, getairmail.com, temp-mail.ru и аналогичные               |
+| **1** | да                         | Некорректное значение. Не соответствует общепринятым правилам                                          |
+| **4** | да                         | Исправлены опечатки                                                                                    |
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ                                                              |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `413`                | Слишком большая длина запроса или слишком много условий                                     |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataEmail;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+    /**
+    * DaData email
+    *
+    * @return void
+    */
+    public function nameExample() : void
+    {
+        try {
+            $dadata = DaDataEmail::standardization('serega@yandex/ru');
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+}
+
+```
+
+### Подсказоки по email
+`DaDataEmail::prompt(string $email, int $count)` Помогает человеку быстро ввести адрес электоронной почты на веб-форме или в приложении.
+
+Основные кейсы
+- Подсказывает локальную (до «собачки») и доменную (после «собачки») части эл. почты.
+- Исправляет опечатки (yadex.ru → yandex.ru).
+
+Метод не предназначен для выполнения следующих задач
+- Автоматически (без участия человека) проверить адреса из базы или файла.
+- Классифицировать адреса на личные (@mail.ru, @yandex.ru), корпоративные (@myshop.ru) и «ролевые» (info@, support@).
+- Склонять по падежам (кого? кому? кем?).
+
+Подсказки не подходят для автоматической обработки email. Они предлагают варианты, но не гарантируют, что угадали правильно. Поэтому окончательное решение всегда должен принимать человек.
+
+Для автоматической обработки и классификации адресов используйте `DaDataName::email(string $email)`
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `email`           | `string`  | `false`      |                   | Текст запроса                               |
+| `count`           | `int`     | `true`       | 10                | Количество результатов. Максимум 20         |
+
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataEmail;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData name prompt
+    *
+    * @return void
+    */
+    public function nameExample() : void
+    {
+        $dadata = DaDataEmail::prompt('anton@', 2);
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:2 [
+    0 => array:3 [
+      "value" => "anton@mail.ru"
+      "unrestricted_value" => "anton@mail.ru"
+      "data" => array:5 [
+        "local" => "anton"
+        "domain" => "mail.ru"
+        "type" => null
+        "source" => null
+        "qc" => null
+      ]
+    ]
+    1 => array:3 [
+      "value" => "anton@gmail.com"
+      "unrestricted_value" => "anton@gmail.com"
+      "data" => array:5 [
+        "local" => "anton"
+        "domain" => "gmail.com"
+        "type" => null
+        "source" => null
+        "qc" => null
+      ]
+    ]
+  ]
+]
+
+```
+
+Описание ответа
+
+|       **Название**        |                       **Описание**                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------|
+| `value`                   | Email одной строкой                                                                                           |
+| `unrestricted_value`      | Равно полю `value`                                                                                            |
+| `data['local']`           | Локальная часть адреса (то, что до `@`)                                                                       |
+| `data['domain']`          | Домен (то, что послу `@`)                                                                                     |
+| `data['type']`            | Зарезервированы для автоматической обработки адресов через `DaDataName::email(string $email)` метод           |
+| `data['source']`          | Зарезервированы для автоматической обработки адресов через `DaDataName::email(string $email)` метод           |
+| `data['qc']`              | Зарезервированы для автоматической обработки адресов через `DaDataName::email(string $email)` метод           |
+
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ                                                              |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `413`                | Слишком большая длина запроса или слишком много условий                                     |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataEmail;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+    /**
+    * DaData email prompt
+    *
+    * @return void
+    */
+    public function nameExample() : void
+    {
+        try {
+            $dadata = DaDataEmail::prompt('anton@', 2);
 
             dd($dadata);
         } catch (\Exception $e) {
