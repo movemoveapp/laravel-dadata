@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/movemove-io/laravel-dadata.svg?token=E8WZTvpNHoqu5bG7wouf&branch=master)](https://travis-ci.com/movemove-io/laravel-dadata)
+
 # DaData Laravel SDK Package
 *DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/).
 
