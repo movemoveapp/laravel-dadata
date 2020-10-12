@@ -107,7 +107,7 @@ class DaDataAddressTest extends TestCase
     }
 
     /**
-     * @test 
+     * @test
      */
     public function testFiasAddress()
     {

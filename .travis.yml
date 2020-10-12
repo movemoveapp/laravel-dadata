@@ -1,11 +1,9 @@
 language: php
 
 php:
-  - 7.3
   - 7.4
 
 env:
-  - LARAVEL_VERSION=7.*
   - LARAVEL_VERSION=8.*
 
 matrix:
