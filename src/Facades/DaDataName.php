@@ -18,7 +18,7 @@ class DaDataName extends Facade
      */
     protected static function getFacadeAccessor() : string
     {
-        return 'dadata_name';
+        return 'da_data_name';
     }
 
 }

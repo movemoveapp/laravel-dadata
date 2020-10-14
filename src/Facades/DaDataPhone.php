@@ -18,7 +18,7 @@ class DaDataPhone extends Facade
      */
     protected static function getFacadeAccessor() : string
     {
-        return 'dadata_phone';
+        return 'da_data_phone';
     }
 
 }

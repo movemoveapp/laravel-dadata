@@ -15,7 +15,12 @@ class TestCase extends \Orchestra\Testbench\TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'DaDataAddress' => 'MoveMoveIo\DaData\Facades\DaDataAddress',
+            'DaDataAddress'    => 'MoveMoveIo\DaData\Facades\DaDataAddress',
+            'DaDataName'       => 'MoveMoveIo\DaData\Facades\DaDataName',
+            'DaDataEmail'      => 'MoveMoveIo\DaData\Facades\DaDataEmail',
+            'DaDataPhone'      => 'MoveMoveIo\DaData\Facades\DaDataPhone',
+            'DaDataCompany'    => 'MoveMoveIo\DaData\Facades\DaDataCompany',
+            'DaDataBank'       => 'MoveMoveIo\DaData\Facades\DaDataBank',
         ];
     }
 

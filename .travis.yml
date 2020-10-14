@@ -1,12 +1,11 @@
 language: php
 
 php:
-  - 7.3
-  - 7.4
+  - 7.*
 
 env:
-  - LARAVEL_VERSION=7.*
   - LARAVEL_VERSION=8.*
+  - LARAVEL_VERSION=7.*
 
 matrix:
   fast_finish: true

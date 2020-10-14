@@ -18,7 +18,7 @@ class DaDataCompany extends Facade
      */
     protected static function getFacadeAccessor() : string
     {
-        return 'dadata_company';
+        return 'da_data_company';
     }
 
 }
