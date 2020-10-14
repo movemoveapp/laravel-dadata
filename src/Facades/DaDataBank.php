@@ -18,7 +18,7 @@ class DaDataBank extends Facade
      */
     protected static function getFacadeAccessor() : string
     {
-        return 'dadata_bank';
+        return 'da_data_bank';
     }
 
 }

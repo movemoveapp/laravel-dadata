@@ -38,7 +38,7 @@ DADATA_TIMEOUT=10
   - [Определение адреса по IP](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-ip)
   - [Определение адреса по КЛАДР или ФИАС коду](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BB%D0%B0%D0%B4%D1%80-%D0%B8%D0%BB%D0%B8-%D1%84%D0%B8%D0%B0%D1%81-%D0%BA%D0%BE%D0%B4%D1%83)
   - [Определение ближайшего отделения Почты России по адресу](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B1%D0%BB%D0%B8%D0%B6%D0%B0%D0%B9%D1%88%D0%B5%D0%B3%D0%BE-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D1%83)
-  - [Определение отделения Почты России по почтовому индексу](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%83)
+  - [Определение отделения Почты России почтовому индексу](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BF%D0%BE%D1%87%D1%82%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D1%83)
   - [Определение отделения Почты России по координатам](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BF%D0%BE%D1%87%D1%82%D1%8B-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B8-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC)
   - [Определение идентификатора города в СДЭК, Boxberry и DPD](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D0%B0-%D0%B2-%D1%81%D0%B4%D1%8D%D0%BA-boxberry-%D0%B8-dpd)
   - [Адрес в ФИАС по идентификатору](https://github.com/movemove-io/laravel-dadata#%D0%B0%D0%B4%D1%80%D0%B5%D1%81-%D0%B2-%D1%84%D0%B8%D0%B0%D1%81-%D0%BF%D0%BE-%D0%B8%D0%B4%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D1%83)
@@ -54,6 +54,9 @@ DADATA_TIMEOUT=10
   - [Организация по ИНН](https://github.com/movemove-io/laravel-dadata#%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%BF%D0%BE-%D0%B8%D0%BD%D0%BD)
   - [Автодополнение при вводе («подсказки»)](https://github.com/movemove-io/laravel-dadata#%D0%B0%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B5-%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8-1)
   - [Поиск аффилированных компаний](https://github.com/movemove-io/laravel-dadata#%D0%BF%D0%BE%D0%B8%D1%81%D0%BA-%D0%B0%D1%84%D1%84%D0%B8%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D0%B9)
+- **Работа с банками**
+  - [Банк по БИК, SWIFT, ИНН или регистрационному номеру](https://github.com/movemove-io/laravel-dadata#)
+  - [API подсказок по банкам](https://github.com/movemove-io/laravel-dadata#)
 
 
 
@@ -347,7 +350,7 @@ class DaData
 ```
 
 ### Подсказки по адресам
-`DaDataAddress::prompt(string $query, int $count, int $language, array $locations, array $locations_geo, array $locations_boost, array $from_bound, array $to_bound)` Ищет адреса по любой части адреса от региона до дома («тверская нижний 12» → «Нижегородская обл, г Нижний Новгород, ул Тверская, д 12»). Также ищет по почтовому индексу («105568» → «г Москва, ул Магнитогорская»).
+`DaDataAddress::prompt(string $query, int $count, int $language, array $locations, array $locations_geo, array $locations_boost, array $from_bound, array $to_bound)` Ищет адреса по любой части адреса от региона до дома («тверская нижний 12» → «Нижегородская обл, г Нижний Новгород, ул Тверская, д 12»). Также ищет почтовому индексу («105568» → «г Москва, ул Магнитогорская»).
 
 Основные кейсы:
 - Работает по всем странам мира (по России до дома, по остальным странам — до города). Ищет и показывает результаты как на русском языке («Самара, пр-кт Металлургов»), так и на английском («Russia, gorod Samara, prospekt Metallurgov»).
@@ -1487,8 +1490,8 @@ array:1 [
 
 Более детальную информацию вы можете получить из сообщения исключения.
 
-### Определение отделения Почты России по почтовому индексу
-`DaDataAddress::postalUnitById(int $code, int $count, int $language)` определяет адреса почтовых отделений по почтовому коду
+### Определение отделения Почты России почтовому индексу
+`DaDataAddress::postalUnitById(int $code, int $count, int $language)` определяет адреса почтовых отделений почтовому коду
                                                                                                   
 Параметры вызова
 
@@ -3287,7 +3290,7 @@ use MoveMoveIo\DaData\Enums\CompanyStatus;
 $type = CompanyStatus::LEGAL;
 ```
 
-Тип поиска только по по индивидуальным предпринимателям
+Тип поиска только по индивидуальным предпринимателям
 ```php
 ...
 use MoveMoveIo\DaData\Enums\CompanyStatus;
@@ -3628,3 +3631,567 @@ class DaData
 }
 
 ```
+
+## Работа с банками
+### Банк по БИК, SWIFT, ИНН или регистрационному номеру
+`DaDataBank::id(string $bank);` Находит банк по любому из идентификаторов: БИК, SWIFT, ИНН, ИНН + КПП (для филиалов), рег. номеру, присвоенному Банком России. Возвращает реквизиты банка, корр. счёт, адрес и статус (действующий / на ликвидации).
+
+Ищет кредитные организации по:
+- БИК;
+- SWIFT;
+- ИНН;
+- ИНН плюс КПП;
+- Названию;
+
+Ищет только по точному совпадению, для частичного совпадения используйте метод `DaDataBank::prompt(string $bank, int $count, array $status, array $type, string $locations, string $locations_boost)`
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataBank;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+   * DaData prompt bank by string
+   *
+   * @return void
+   */
+   public function promptExample() : void
+    {
+        $dadata = DaDataBank::id('044525225');
+        
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `bank`            | `string`  | `false`      |                   | Текст запроса                               |
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "ПАО Сбербанк"
+      "unrestricted_value" => "ПАО Сбербанк"
+      "data" => array:14 [
+        "opf" => array:3 [
+          "type" => "BANK"
+          "full" => null
+          "short" => null
+        ]
+        "name" => array:3 [
+          "payment" => "ПАО СБЕРБАНК"
+          "full" => null
+          "short" => "ПАО Сбербанк"
+        ]
+        "bic" => "044525225"
+        "swift" => "SABRRUMM"
+        "inn" => "7707083893"
+        "kpp" => "773601001"
+        "okpo" => null
+        "correspondent_account" => "30101810400000000225"
+        "registration_number" => "1481"
+        "payment_city" => "г Москва"
+        "state" => array:4 [
+          "status" => "ACTIVE"
+          "actuality_date" => 1602547200000
+          "registration_date" => 677376000000
+          "liquidation_date" => null
+        ]
+        "rkc" => null
+        "address" => array:3 [
+          "value" => "г Москва, ул Вавилова, д 19"
+          "unrestricted_value" => "117312, г Москва, Академический р-н, ул Вавилова, д 19"
+          "data" => array:81 [
+            "postal_code" => "117312"
+            "country" => "Россия"
+            "country_iso_code" => "RU"
+            "federal_district" => "Центральный"
+            "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "region_kladr_id" => "7700000000000"
+            "region_iso_code" => "RU-MOW"
+            "region_with_type" => "г Москва"
+            "region_type" => "г"
+            "region_type_full" => "город"
+            "region" => "Москва"
+            "area_fias_id" => null
+            "area_kladr_id" => null
+            "area_with_type" => null
+            "area_type" => null
+            "area_type_full" => null
+            "area" => null
+            "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "city_kladr_id" => "7700000000000"
+            "city_with_type" => "г Москва"
+            "city_type" => "г"
+            "city_type_full" => "город"
+            "city" => "Москва"
+            "city_area" => "Юго-западный"
+            "city_district_fias_id" => null
+            "city_district_kladr_id" => null
+            "city_district_with_type" => "Академический р-н"
+            "city_district_type" => "р-н"
+            "city_district_type_full" => "район"
+            "city_district" => "Академический"
+            "settlement_fias_id" => null
+            "settlement_kladr_id" => null
+            "settlement_with_type" => null
+            "settlement_type" => null
+            "settlement_type_full" => null
+            "settlement" => null
+            "street_fias_id" => "25f8f29b-b110-40ab-a48e-9c72f5fb4331"
+            "street_kladr_id" => "77000000000092400"
+            "street_with_type" => "ул Вавилова"
+            "street_type" => "ул"
+            "street_type_full" => "улица"
+            "street" => "Вавилова"
+            "house_fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "house_kladr_id" => "7700000000009240170"
+            "house_type" => "д"
+            "house_type_full" => "дом"
+            "house" => "19"
+            "block_type" => null
+            "block_type_full" => null
+            "block" => null
+            "flat_type" => null
+            "flat_type_full" => null
+            "flat" => null
+            "flat_area" => null
+            "square_meter_price" => null
+            "flat_price" => null
+            "postal_box" => null
+            "fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "fias_code" => "77000000000000009240170"
+            "fias_level" => "8"
+            "fias_actuality_state" => "0"
+            "kladr_id" => "7700000000009240170"
+            "geoname_id" => "524901"
+            "capital_marker" => "0"
+            "okato" => "45293554000"
+            "oktmo" => "45397000"
+            "tax_office" => "7736"
+            "tax_office_legal" => "7736"
+            "timezone" => "UTC+3"
+            "geo_lat" => "55.7001865"
+            "geo_lon" => "37.5802234"
+            "beltway_hit" => "IN_MKAD"
+            "beltway_distance" => null
+            "metro" => array:3 [
+              0 => array:3 [
+                "name" => "Ленинский проспект"
+                "line" => "Калужско-Рижская"
+                "distance" => 0.8
+              ]
+              1 => array:3 [
+                "name" => "Площадь Гагарина"
+                "line" => "МЦК"
+                "distance" => 0.8
+              ]
+              2 => array:3 [
+                "name" => "Академическая"
+                "line" => "Калужско-Рижская"
+                "distance" => 1.5
+              ]
+            ]
+            "qc_geo" => "0"
+            "qc_complete" => "5"
+            "qc_house" => "2"
+            "history_values" => null
+            "unparsed_parts" => null
+            "source" => "117997, г Москва, ул Вавилова, 19"
+            "qc" => "0"
+          ]
+        ]
+        "phones" => null
+      ]
+    ]
+  ]
+]
+
+```
+
+Описание ответа
+Таблицу описания полного ответа вы можете получить на старнице [Банк по БИК, SWIFT, ИНН или регистрационному номеру](https://dadata.ru/api/find-bank/) в разделе **"Что в ответе"**.
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ или секретный ключ или в запросе указан несуществующий ключ  |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataBank;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+   * DaData prompt bank by string
+   *
+   * @return void
+   */
+   public function promptExample() : void
+    {
+        try {
+            $dadata = DaDataBank::id('044525225');
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }    
+    }
+
+}
+
+```
+
+### API подсказок по банкам
+`DaDataBank::prompt(string $bank, int $count, array $status, array $type, string $locations, string $locations_boost)` Помогает человеку быстро ввести реквизиты банка на веб-форме или в приложении.
+
+Ищет кредитные организации по:
+- БИК;
+- SWIFT;
+- ИНН;
+- ИНН плюс КПП;
+- Названию;
+
+Основные кейсы:
+- Фильтрует по типу: банки, НКО и филиалы, а также РКЦ и другие организации;
+- Умеет искать как действующие банки, так и банки на ликвидации;
+- Учитывает, где вы находитесь (геолокация до города);
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\BankStatus;
+use MoveMoveIo\DaData\Enums\BankType;
+use MoveMoveIo\DaData\Facades\DaDataBank;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+   * DaData prompt bank by string
+   *
+   * @return void
+   */
+   public function promptExample() : void
+    {
+        $dadata = DaDataBank::prompt('сбербанк', 1, [BankStatus::ACTIVE], [BankType::BANK]);
+        
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `bank`            | `string`  | `false`      |                   | Текст запроса                               |
+| `count`           | `int`     | `true`       | 10                | Количество результатов. Максимум 20         |
+| `status`          | `array`   | `true`       | null              | Ограничение по статусу банка                |
+| `type`            | `array`   | `true`       | 1                 | Ограничение по типу банка                   |
+| `locations`       | `string`  | `true`       | null              | Ограничение по региону или городу. Двухзначные коды необходимо передавать строкой через `,` запятую. [Список кодов](https://confluence.hflabs.ru/pages/viewpage.action?pageId=204669123#id-%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BF%D0%BE%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D1%83%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8(API)-%D0%9A%D0%BE%D0%B4%D1%8B%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2) |
+| `locations_boost` | `string`  | `true`       | null              | Приоритет города при ранжировании. |
+
+**Формирование `status` - ограничение по статусу организации**
+Чтобы искать только действующие банки, сформироуйте массив status как
+ 
+```php
+...
+use MoveMoveIo\DaData\Enums\BankStatus;
+...
+$status = [
+    BankStatus::ACTIVE
+];
+```
+
+Поиск только среди ликвидируемых и ликвидированных банков:
+```php
+...
+use MoveMoveIo\DaData\Enums\BankStatus;
+...
+$status = [
+    BankStatus::LIQUIDATING,
+    BankStatus::LIQUIDATED,
+];
+```
+
+**Формирование `type` - Ограничение по типу банка.**
+Доступные типы организаций в классе `MoveMoveIo\DaData\Enums\BankType`
+
+| **Тип**                 | **Тип организации**                               |
+|:------------------------|:--------------------------------------------------|
+| `BankType::BANK`        | Банк                                              |
+| `BankType::BANK_BRANCH` | Филиал банка                                      |
+| `BankType::NKO`         | Небанковская кредитная организация                |
+| `BankType::NKO_BRANCH`  | Филиал небанковской кредитной организации         |
+| `BankType::OTHER`       | Другое                                            |
+| `BankType::RKC`         | РКЦ / ГРКЦ                                        |
+
+Тип поиска только по банкам и филиалам банков
+                 
+```php
+...
+use MoveMoveIo\DaData\Enums\BankType;
+...
+$type = [BankType::BANK, BankType::BANK_BRANCH]
+```
+
+Тип поиска только по РКЦ/ГРКЦ 
+```php
+...
+use MoveMoveIo\DaData\Enums\BankType;
+...
+$type = [BankType::BANK, BankType::RKC]
+```
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "ПАО Сбербанк"
+      "unrestricted_value" => "ПАО Сбербанк"
+      "data" => array:14 [
+        "opf" => array:3 [
+          "type" => "BANK"
+          "full" => null
+          "short" => null
+        ]
+        "name" => array:3 [
+          "payment" => "ПАО СБЕРБАНК"
+          "full" => null
+          "short" => "ПАО Сбербанк"
+        ]
+        "bic" => "044525225"
+        "swift" => "SABRRUMM"
+        "inn" => "7707083893"
+        "kpp" => "773601001"
+        "okpo" => null
+        "correspondent_account" => "30101810400000000225"
+        "registration_number" => "1481"
+        "payment_city" => "г Москва"
+        "state" => array:4 [
+          "status" => "ACTIVE"
+          "actuality_date" => 1602547200000
+          "registration_date" => 677376000000
+          "liquidation_date" => null
+        ]
+        "rkc" => null
+        "address" => array:3 [
+          "value" => "г Москва, ул Вавилова, д 19"
+          "unrestricted_value" => "117312, г Москва, Академический р-н, ул Вавилова, д 19"
+          "data" => array:81 [
+            "postal_code" => "117312"
+            "country" => "Россия"
+            "country_iso_code" => "RU"
+            "federal_district" => "Центральный"
+            "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "region_kladr_id" => "7700000000000"
+            "region_iso_code" => "RU-MOW"
+            "region_with_type" => "г Москва"
+            "region_type" => "г"
+            "region_type_full" => "город"
+            "region" => "Москва"
+            "area_fias_id" => null
+            "area_kladr_id" => null
+            "area_with_type" => null
+            "area_type" => null
+            "area_type_full" => null
+            "area" => null
+            "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "city_kladr_id" => "7700000000000"
+            "city_with_type" => "г Москва"
+            "city_type" => "г"
+            "city_type_full" => "город"
+            "city" => "Москва"
+            "city_area" => "Юго-западный"
+            "city_district_fias_id" => null
+            "city_district_kladr_id" => null
+            "city_district_with_type" => "Академический р-н"
+            "city_district_type" => "р-н"
+            "city_district_type_full" => "район"
+            "city_district" => "Академический"
+            "settlement_fias_id" => null
+            "settlement_kladr_id" => null
+            "settlement_with_type" => null
+            "settlement_type" => null
+            "settlement_type_full" => null
+            "settlement" => null
+            "street_fias_id" => "25f8f29b-b110-40ab-a48e-9c72f5fb4331"
+            "street_kladr_id" => "77000000000092400"
+            "street_with_type" => "ул Вавилова"
+            "street_type" => "ул"
+            "street_type_full" => "улица"
+            "street" => "Вавилова"
+            "house_fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "house_kladr_id" => "7700000000009240170"
+            "house_type" => "д"
+            "house_type_full" => "дом"
+            "house" => "19"
+            "block_type" => null
+            "block_type_full" => null
+            "block" => null
+            "flat_type" => null
+            "flat_type_full" => null
+            "flat" => null
+            "flat_area" => null
+            "square_meter_price" => null
+            "flat_price" => null
+            "postal_box" => null
+            "fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "fias_code" => "77000000000000009240170"
+            "fias_level" => "8"
+            "fias_actuality_state" => "0"
+            "kladr_id" => "7700000000009240170"
+            "geoname_id" => "524901"
+            "capital_marker" => "0"
+            "okato" => "45293554000"
+            "oktmo" => "45397000"
+            "tax_office" => "7736"
+            "tax_office_legal" => "7736"
+            "timezone" => "UTC+3"
+            "geo_lat" => "55.7001865"
+            "geo_lon" => "37.5802234"
+            "beltway_hit" => "IN_MKAD"
+            "beltway_distance" => null
+            "metro" => array:3 [
+              0 => array:3 [
+                "name" => "Ленинский проспект"
+                "line" => "Калужско-Рижская"
+                "distance" => 0.8
+              ]
+              1 => array:3 [
+                "name" => "Площадь Гагарина"
+                "line" => "МЦК"
+                "distance" => 0.8
+              ]
+              2 => array:3 [
+                "name" => "Академическая"
+                "line" => "Калужско-Рижская"
+                "distance" => 1.5
+              ]
+            ]
+            "qc_geo" => "0"
+            "qc_complete" => "5"
+            "qc_house" => "2"
+            "history_values" => null
+            "unparsed_parts" => null
+            "source" => "117997, г Москва, ул Вавилова, 19"
+            "qc" => "0"
+          ]
+        ]
+        "phones" => null
+      ]
+    ]
+  ]
+]
+
+```
+
+Описание ответа
+Таблицу описания полного ответа вы можете получить на старнице [API подсказок по банкамм](https://dadata.ru/api/suggest/bank/) в разделе **"Что в ответе"**.
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ или секретный ключ или в запросе указан несуществующий ключ  |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\BankStatus;
+use MoveMoveIo\DaData\Enums\BankType;
+use MoveMoveIo\DaData\Facades\DaDataBank;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+   * DaData prompt bank by string
+   *
+   * @return void
+   */
+   public function promptExample() : void
+    {
+        try {
+            $dadata = DaDataBank::prompt('сбербанк', 1, [BankStatus::ACTIVE], BankType::BANK);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }    
+    }
+
+}
+
+```
+

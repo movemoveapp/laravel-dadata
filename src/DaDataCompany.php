@@ -90,7 +90,7 @@ class DaDataCompany extends DaDataService
             'query'             => $company,
             'count'             => $count,
             'status'            => array_values($status),
-            'type'              => CompanyStatus::$map[$type] ?? null,
+            'type'              => CompanyType::$map[$type] ?? null,
             'locations'         => $locations_array,
             'locations_boost'   => $locations_boost_array,
         ]);

@@ -6,7 +6,6 @@ use MoveMoveIo\DaData\Enums\BranchType;
 use MoveMoveIo\DaData\Enums\CompanyStatus;
 use MoveMoveIo\DaData\Enums\CompanyType;
 use MoveMoveIo\DaData\Facades\DaDataCompany;
-use MoveMoveIo\DaData\Facades\DaDataName;
 
 /**
  * Class DaDataCompanyTest
