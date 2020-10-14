@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/movemove-io/laravel-dadata.svg?token=E8WZTvpNHoqu5bG7wouf&branch=master)](https://travis-ci.com/movemove-io/laravel-dadata)
 
 # DaData Laravel SDK Package
-*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/).
+*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/). Данный пакет является альтернативным и поддерживает больше методов, чем официальный пакет [fomvasss/laravel-dadata](https://github.com/fomvasss/laravel-dadata). Пакет [movemove-io/laravel-dadata](https://github.com/movemove-io/laravel-dadata) не является форком от официальнго пакета. Основной позыв в создании данного пакета - это поддержка последних stable релизов [PHP](https://www.php.net/downloads) и [Laravel](https://github.com/laravel/laravel) 
 
 ## Установка
 Вы можете установить пакет через composer:
@@ -10,12 +10,18 @@
 composer require movemove-io/laravel-dadata
 ```
 
-Публикация конфигурационного файла
+Публикация конфигурационного файла. Выполните artsan команду
 
 ```shell script
 composer require movemove-io/laravel-dadata
 ```
 
+Настройка проекта осществляется через `.env` вашего проекта. Вам необходимо указать три параметра
+- `DADATA_TOKEN` - token для раоты с API DaData
+- `DADATA_SECRET` - secret для работы с API DaData
+- `DADATA_TIMEOUT` - максимальное время ожидания ответа от API сервисов DaData в секундах. По умолчанию это значение равно 10 секунд.
+
+Пример `.env`
 
 ```php
 DADATA_TOKEN="c32c33ebaf450067d64516fbe041d2a8a6d4211f"
@@ -25,7 +31,6 @@ DADATA_TIMEOUT=10
 
 ## Методы
 
-https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-%D0%BA%D0%BE%D0%BE%D1%80%D0%B4%D0%B8%D0%BD%D0%B0%D1%82%D0%B0%D0%BC
 - **Работа с адресами**
   - [Стандартизация адреса](https://github.com/movemove-io/laravel-dadata#%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0)
   - [Подсказки по адресам](https://github.com/movemove-io/laravel-dadata#%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8-%D0%BF%D0%BE-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0%D0%BC)
@@ -41,8 +46,15 @@ https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%
   - [ФИО](https://github.com/movemove-io/laravel-dadata#%D1%84%D0%B8%D0%BE)
   - [Автодополнение при вводе («подсказки»)](https://github.com/movemove-io/laravel-dadata#%D0%B0%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D1%80%D0%B8-%D0%B2%D0%B2%D0%BE%D0%B4%D0%B5-%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B8)
 - **Работа с электорнными (email) адресами**
-  - [Email](https://github.com/movemove-io/laravel-dadata#)
-  - [Подсказоки по email](https://github.com/movemove-io/laravel-dadata#)
+  - [Email](https://github.com/movemove-io/laravel-dadata#email)
+  - [Подсказки по email](https://github.com/movemove-io/laravel-dadata#%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B7%D0%BE%D0%BA%D0%B8-%D0%BF%D0%BE-email)
+- **Работа с телефонными номерами**
+  - [Проверить телефон](https://github.com/movemove-io/laravel-dadata#)
+- **Работа с компаниями**
+  - [Организация по ИНН](https://github.com/movemove-io/laravel-dadata#)
+  - [Автодополнение при вводе («подсказки»)](https://github.com/movemove-io/laravel-dadata#)
+  - [Поиск аффилированных компаний](https://github.com/movemove-io/laravel-dadata#)
+
 
 
 ## Работа с адресами
@@ -2499,7 +2511,7 @@ class DaData
 
 ```
 
-### Подсказоки по email
+### Подсказки по email
 `DaDataEmail::prompt(string $email, int $count)` Помогает человеку быстро ввести адрес электоронной почты на веб-форме или в приложении.
 
 Основные кейсы
@@ -2646,6 +2658,971 @@ class DaData
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
+    }
+
+}
+
+```
+
+## Работа с телефонными номерами
+### Проверить телефон
+`DaDataPhone::standardization(string $phone);` Проверяет телефон по справочнику Россвязи, определяет оператора с учётом переноса номеров, заполняет страну, город и часовой пояс.
+
+Основные кейсы
+- Проверяет телефон.
+- Проставляет актуальный код города / DEF-код.
+- Восстанавливает оператора. Учитывает переносы номера между операторами.
+- Определяет страну, регион, город и часовой пояс.
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `phone`           | `string`  | `false`      |                   | Текст запроса                               |
+
+
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataPhone;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData phone exmaple
+    *
+    * @return void
+    */
+    public function phoneExample() : void
+    {
+        $dadata = DaDataPhone::standardization('раб 846)231.60.14 *139');
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Пример ответа
+
+```php
+array:1 [
+  0 => array:14 [
+    "source" => "раб 846)231.60.14 *139"
+    "type" => "Стационарный"
+    "phone" => "+7 846 231-60-14 доб. 139"
+    "country_code" => "7"
+    "city_code" => "846"
+    "number" => "2316014"
+    "extension" => "139"
+    "provider" => "ООО "СИПАУТНЭТ""
+    "country" => "Россия"
+    "region" => "Самарская область"
+    "city" => "Самара"
+    "timezone" => "UTC+4"
+    "qc_conflict" => 0
+    "qc" => 0
+  ]
+]
+
+```
+
+Описание ответа
+
+|       **Название**        |                       **Описание**                                                                            |
+|:--------------------------|:--------------------------------------------------------------------------------------------------------------|
+| `source`                  | Строка запроса
+| `type`                    | Тип телефона, может возвращать: `Мобильный`, `Стационарный`, `Прямой мобильный`, `Колл-центр`, `Неизвестный`. __Примечание от автора [movemove-io/laravel-dadata](https://github.com/movemove-io/laravel-dadata):__ **Ребята из DaData, ну вот как можно типы в таком виде отдавать? Ну можно было кодами их отдавать или `cell`, `phone`, `call-center`?** |           
+| `phone`                   | Стандартизованный телефон одной строкой                                                                       |
+| `country_code`            | Код страны                                                                                                    |
+| `city_code`               | Код города / DEF-код                                                                                          |
+| `number`                  | Локальный номер телефона                                                                                      |
+| `extension`               | Добавочный номер                                                                                              |
+| `provider`                | Оператор связи (только для России)                                                                            |
+| `country`                 | Страна                                                                                                        |
+| `region`                  | Регион (только для России)                                                                                    |
+| `city`                    | Город (только для стационарных телефонов)                                                                     |
+| `timezone`                | Часовой пояс города для России, часовой пояс страны — для иностранных телефонов. Если у страны несколько поясов, вернёт минимальный и максимальный через слеш: UTC+5/UTC+6 |
+| `qc_conflict`             | Признак конфликта телефона с адресом. `0` - Телефон соответствует адресу, `2` - Города адреса и телефона отличаются, `3` - Регионы адреса и телефона отличаются |
+| `qc`                      | Код проверки                                                                                                  |
+
+Коды проверки `qc`
+ 
+| **Код** | **Треубется ручная проверка?**  | **Описание**                                                                                  |
+|:-------:|:-------------------------------:|:----------------------------------------------------------------------------------------------|
+| `0`     | Нет                             | Российский телефон, распознан уверенно                                                        |
+| `7`     | Нет                             | Иностранный телефон, распознан уверенно                                                       |
+| `2`     | Нет                             | Телефон пустой или заведомо «мусорный»                                                        |
+| `1`     | Да                              | Телефон распознан с допущениями или не распознан                                              |
+| `3`     | Да                              | Обнаружено несколько телефонов, распознан первый	                                            |
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ                                                              |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `413`                | Слишком большая длина запроса или слишком много условий                                     |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Facades\DaDataPhone;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+    /**
+    * DaData phone exmaple
+    *
+    * @return void
+    */
+    public function nameExample() : void
+    {
+        try {
+            $dadata = DaDataPhone::standardization('раб 846)231.60.14 *139');
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }
+    }
+
+}
+
+```
+
+
+## Работа с компаниями**
+### Организация по ИНН
+`DaDataCompany::id(string $id', int $count, string $kpp, int $branch_type, int $type)` - Находит компанию или индивидуального предпринимателя по ИНН, КПП, ОГРН. Возвращает реквизиты компании, учредителей, руководителей, сведения о налоговой, ПФР и ФСС, финансы, лицензии, реестр МСП и другую информацию о компании.
+
+Находит компанию или ИП по ИНН или ОГРН. Возвращает все доступные сведения о компании, в отличие от метода suggest, который возвращает только базовые поля.
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\BranchType;
+use MoveMoveIo\DaData\Enums\CompanyType;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData find organization by FIAS or OGRN ID example
+    *
+    * @return void
+    */
+    public function idExample() : void
+    {
+        $dadata = DaDataCompany::id('7707083893', 1, null, BranchType::MAIN, CompanyType::LEGAL);
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `id`              | `string`  | `false`      |                   | Текст запроса                               |
+| `count`           | `int`     | `true`       | 10                | Количество результатов. Максимум 20         |
+| `kpp`             | `int`     | `true`       | null              | КПП для поиска по филиалам, см.``           |
+| `branch_type`     | `int`     | `true`       | 1                 | Головная организация `BranchType::MAIN` или филиал `BranchType::BRANCH` |
+| `type`            | `int`     | `true`       | 1                 | Юрлицо `CompanyType::LEGAL` или индивидуальный предприниматель `CompanyType::INDIVIDUAL` |
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "ПАО СБЕРБАНК"
+      "unrestricted_value" => "ПАО СБЕРБАНК"
+      "data" => array:33 [
+        "kpp" => "773601001"
+        "capital" => null
+        "management" => array:3 [
+          "name" => "Греф Герман Оскарович"
+          "post" => "ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ"
+          "disqualified" => null
+        ]
+        "founders" => null
+        "managers" => null
+        "branch_type" => "MAIN"
+        "branch_count" => 88
+        "source" => null
+        "qc" => null
+        "hid" => "588a141bc5e17cbc976ec2d0d54149af49d5a4ca16e26ed2effafdf06841d645"
+        "type" => "LEGAL"
+        "state" => array:4 [
+          "status" => "ACTIVE"
+          "actuality_date" => 1601942400000
+          "registration_date" => 677376000000
+          "liquidation_date" => null
+        ]
+        "opf" => array:4 [
+          "type" => "2014"
+          "code" => "12247"
+          "full" => "Публичное акционерное общество"
+          "short" => "ПАО"
+        ]
+        "name" => array:5 [
+          "full_with_opf" => "ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ""
+          "short_with_opf" => "ПАО СБЕРБАНК"
+          "latin" => null
+          "full" => "СБЕРБАНК РОССИИ"
+          "short" => "СБЕРБАНК"
+        ]
+        "inn" => "7707083893"
+        "ogrn" => "1027700132195"
+        "okpo" => "00032537"
+        "okato" => "45293554000"
+        "oktmo" => "45397000000"
+        "okogu" => "4100104"
+        "okfs" => "41"
+        "okved" => "64.19"
+        "okveds" => null
+        "authorities" => null
+        "documents" => null
+        "licenses" => null
+        "finance" => null
+        "address" => array:3 [
+          "value" => "г Москва, ул Вавилова, д 19"
+          "unrestricted_value" => "117312, г Москва, Академический р-н, ул Вавилова, д 19"
+          "data" => array:81 [
+            "postal_code" => "117312"
+            "country" => "Россия"
+            "country_iso_code" => "RU"
+            "federal_district" => "Центральный"
+            "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "region_kladr_id" => "7700000000000"
+            "region_iso_code" => "RU-MOW"
+            "region_with_type" => "г Москва"
+            "region_type" => "г"
+            "region_type_full" => "город"
+            "region" => "Москва"
+            "area_fias_id" => null
+            "area_kladr_id" => null
+            "area_with_type" => null
+            "area_type" => null
+            "area_type_full" => null
+            "area" => null
+            "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "city_kladr_id" => "7700000000000"
+            "city_with_type" => "г Москва"
+            "city_type" => "г"
+            "city_type_full" => "город"
+            "city" => "Москва"
+            "city_area" => "Юго-западный"
+            "city_district_fias_id" => null
+            "city_district_kladr_id" => null
+            "city_district_with_type" => "Академический р-н"
+            "city_district_type" => "р-н"
+            "city_district_type_full" => "район"
+            "city_district" => "Академический"
+            "settlement_fias_id" => null
+            "settlement_kladr_id" => null
+            "settlement_with_type" => null
+            "settlement_type" => null
+            "settlement_type_full" => null
+            "settlement" => null
+            "street_fias_id" => "25f8f29b-b110-40ab-a48e-9c72f5fb4331"
+            "street_kladr_id" => "77000000000092400"
+            "street_with_type" => "ул Вавилова"
+            "street_type" => "ул"
+            "street_type_full" => "улица"
+            "street" => "Вавилова"
+            "house_fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "house_kladr_id" => "7700000000009240170"
+            "house_type" => "д"
+            "house_type_full" => "дом"
+            "house" => "19"
+            "block_type" => null
+            "block_type_full" => null
+            "block" => null
+            "flat_type" => null
+            "flat_type_full" => null
+            "flat" => null
+            "flat_area" => null
+            "square_meter_price" => null
+            "flat_price" => null
+            "postal_box" => null
+            "fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "fias_code" => "77000000000000009240170"
+            "fias_level" => "8"
+            "fias_actuality_state" => "0"
+            "kladr_id" => "7700000000009240170"
+            "geoname_id" => "524901"
+            "capital_marker" => "0"
+            "okato" => "45293554000"
+            "oktmo" => "45397000"
+            "tax_office" => "7736"
+            "tax_office_legal" => "7736"
+            "timezone" => "UTC+3"
+            "geo_lat" => "55.7001865"
+            "geo_lon" => "37.5802234"
+            "beltway_hit" => "IN_MKAD"
+            "beltway_distance" => null
+            "metro" => array:3 [
+              0 => array:3 [
+                "name" => "Ленинский проспект"
+                "line" => "Калужско-Рижская"
+                "distance" => 0.8
+              ]
+              1 => array:3 [
+                "name" => "Площадь Гагарина"
+                "line" => "МЦК"
+                "distance" => 0.8
+              ]
+              2 => array:3 [
+                "name" => "Академическая"
+                "line" => "Калужско-Рижская"
+                "distance" => 1.5
+              ]
+            ]
+            "qc_geo" => "0"
+            "qc_complete" => null
+            "qc_house" => null
+            "history_values" => null
+            "unparsed_parts" => null
+            "source" => "117997, ГОРОД МОСКВА, УЛИЦА ВАВИЛОВА, 19"
+            "qc" => "0"
+          ]
+        ]
+        "phones" => null
+        "emails" => null
+        "ogrn_date" => 1029456000000
+        "okved_type" => "2014"
+        "employee_count" => null
+      ]
+    ]
+  ]
+]
+
+```
+
+Описание ответа
+Таблицу описания полного ответа вы можете получить на старнице [Организация по ИНН или ОГРН](https://dadata.ru/api/find-party/) в разделе **"Что в ответе"**.
+
+Описани ответа `data['address']`
+
+|       **Название**        |   **Длина**  |                       **Описание**                             |
+|:--------------------------|-------------:|:---------------------------------------------------------------|
+| `source`                  | 250 | Исходный адрес одной строкой                                            |
+| `result`                  | 500 | Стандартизованный адрес одной строкой                                   |
+| `postal_code`             | 6   | Индекс                                                                  |
+| `country`                 | 120 | Страна                                                                  |
+| `country_iso_code`        | 2   | ISO-код страны                                                          |
+| `federal_district`        | 20  | Федеральный округ                                                       |
+| `region_fias_id`          | 36  | ФИАС-код региона                                                        |
+| `region_kladr_id`         | 19  | КЛАДР-код региона                                                       |
+| `region_iso_code`         | 6   | ISO-код региона                                                         |
+| `region_with_type`        | 131 | Регион с типом                                                          |
+| `region_type`             | 10  | Тип региона (сокращенный)                                               |
+| `region_type_full`        | 50  | Тип региона                                                             |
+| `region`                  | 120 | Регион                                                                  |
+| `area_fias_id`            | 36  | ФИАС-код района                                                         |
+| `area_kladr_id`           | 19  | КЛАДР-код района                                                        |
+| `area_with_type`          | 131 | Район в регионе с типом                                                 |
+| `area_type`               | 10  | Тип района в регионе (сокращенный)                                      |
+| `area_type_full`          | 50  | Тип района в регионе                                                    |
+| `area`                    | 120 | Район в регионе                                                         |
+| `city_fias_id`            | 36  | ФИАС-код города                                                         |
+| `city_kladr_id`           | 19  | КЛАДР-код города                                                        |
+| `city_with_type`          | 131 | Город с типом                                                           |
+| `city_type`               | 10  | Тип города (сокращенный)                                                |
+| `city_type_full`          | 50  | Тип города                                                              |
+| `city`                    | 120 | Город                                                                   |
+| `city_area`               | 120 | Административный округ (только для Москвы)                              |
+| `city_district_fias_id`   | 36  | ФИАС-код района города (заполняется, только если район есть в ФИАС)     |
+| `city_district_kladr_id`  | 19  | КЛАДР-код района города (не заполняется)                                |
+| `city_district_with_type` | 131 | Район города с типом                                                    |
+| `city_district_type`      | 10  | Тип района города (сокращенный)                                         |
+| `city_district_type_full` | 50  | Тип района города                                                       |
+| `city_district`           | 120 | Район города                                                            |
+| `settlement_fias_id`      | 36  | ФИАС-код населенного пункта                                             |
+| `settlement_kladr_id`     | 19  | КЛАДР-код населенного пункта                                            |
+| `settlement_with_type`    | 131 | Населенный пункт с типом                                                |
+| `settlement_type`         | 10  | Тип населенного пункта (сокращенный)                                    |
+| `settlement_type_full`    | 50  | Тип населенного пункта                                                  |
+| `settlement`              | 120 | Населенный пункт                                                        |
+| `street_fias_id`          | 36  | ФИАС-код улицы                                                          |
+| `street_kladr_id`         | 19  | КЛАДР-код улицы                                                         |
+| `street_with_type`        | 131 | Улица с типом                                                           |
+| `street_type`             | 10  | Тип улицы (сокращенный)                                                 |
+| `street_type_full`        | 50  | Тип улицы                                                               |
+| `street`                  | 120 | Улица                                                                   |
+| `house_fias_id`           | 36  | ФИАС-код дома                                                           |
+| `house_kladr_id`          | 19  | КЛАДР-код дома                                                          |
+| `house_type`              | 10  | Тип дома (сокращенный)                                                  |
+| `house_type_full`         | 50  | Тип дома                                                                |
+| `house`                   | 50  | Дом                                                                     |
+| `block_type`              | 10  | Тип корпуса/строения (сокращенный)                                      |
+| `block_type_full`         | 50  | Тип корпуса/строения                                                    |
+| `block`                   | 50  | Корпус/строение                                                         |
+| `flat_type`               | 10  | Тип квартиры (сокращенный)                                              |
+| `flat_type_full`          | 50  | Тип квартиры                                                            |
+| `flat`                    | 50  | Квартира                                                                |
+| `flat_area`               | 50  | Площадь квартиры                                                        |
+| `square_meter_price`      | 50  | Рыночная стоимость м²                                                   |
+| `flat_price`              | 50  | Рыночная стоимость квартиры                                             |
+| `postal_box`              | 50  | Абонентский ящик                                                        |
+| `fias_id`                 | 36  | ФИАС-код адреса (идентификатор ФИАС)                                    |
+|                           |     | `HOUSE.HOUSEGUID — если дом найден в ФИАС`                              |
+|                           |     | `ADDROBJ.AOGUID — в противном случае`                                   |
+| `fias_code`               |     | Иерархический код адреса в ФИАС (СС+РРР+ГГГ+ППП+СССС+УУУУ+ДДДД)         |
+| `fias_level`              | 2   | Уровень детализации, до которого адрес найден в ФИАС                    |
+| `fias_actuality_state`    |     | Признак актуальности адреса в ФИАС                                      |
+| `kladr_id`                | 19  | КЛАДР-код адреса                                                        |
+| `capital_marker`          | 1   | Признак центра района или региона                                       |
+| `okato`                   | 11  | Код ОКАТО                                                               |
+| `oktmo`                   | 11  | Код ОКТМО                                                               |
+| `tax_office`              | 4   | Код ИФНС для физических лиц                                             |
+| `tax_office_legal`        | 4   | Код ИФНС для организаций                                                |
+| `timezone`                | 50  | Часовой пояс города для России, часовой пояс страны — для иностранных адресов. Если у страны несколько поясов, вернёт минимальный и максимальный через слеш: UTC+5/UTC+6 |
+| `geo_lat`                 | 12  | Координаты: широта                                                      |
+| `geo_lon`                 | 12  | Координаты: долгота                                                     |
+| `beltway_hit`             | 8   | Внутри кольцевой?                                                       |
+| `beltway_distance`        | 3   | Расстояние от кольцевой в км. Заполнено, только если beltway_hit = OUT_MKAD или OUT_KAD, иначе пустое |
+| `qc_geo`                  | 5   | Код точности координат                                                  |
+| `qc_complete`             | 5   | Код пригодности к рассылке                                              |
+| `qc_house`                | 5   | Признак наличия дома в ФИАС                                             |
+| `qc`                      | 5   | Код проверки адреса                                                     |
+| `unparsed_parts`          | 250 | Нераспознанная часть адреса. Для адреса «Москва, Митинская улица, 40, вход с торца» вернет «ВХОД, С, ТОРЦА» |
+| `metro`                   |     | Список ближайших станций метро (до трёх штук)                           |
+
+Координаты есть у 97% домов в Москве, 91% в Санкт-Петербурге, 69% в других городах-миллиониках и 47% по остальной России. Площадь и стоимость есть у 70% квартир в России.
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ или секретный ключ или в запросе указан несуществующий ключ  |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\BranchType;
+use MoveMoveIo\DaData\Enums\CompanyType;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData find organization by FIAS or OGRN ID example
+    *
+    * @return void
+    */
+    public function idExample() : void
+    {
+        try {
+            $dadata = DaDataCompany::id('7707083893', 1, null, BranchType::MAIN, CompanyType::LEGAL);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }    
+    }
+
+}
+
+```
+
+### Автодополнение при вводе («подсказки»)
+`DaDataCompany::prompt(string $company, int $count, array $status, int $type, string $locations, string $locations_boost);` Помогает человеку быстро ввести реквизиты организации на веб-форме или в приложении.
+
+Ищет компании и индивидуальных предпринимателей:
+- По ИНН, ОГРН и КПП;
+- Названию (полному и краткому);
+- ФИО (для индивидуальных предпринимателей);
+- ФИО руководителя компании;
+- Адресу до улицы;
+
+Основные кейсы:
+- Ищет по комбинации ИНН, названия и адреса в одном запросе («7736050003 Газ» → «ПАО Газпром», «вавилова сбер» → «ПАО Сбербанк»).
+- Находит конкретный филиал, если указать в запросе КПП («сбербанк 540602001» → «Сибирский банк ПАО Сбербанк»).
+- Понимает слитное и раздельное написание («альфабанк» = «Альфа-Банк»).
+- Ищет по частичному совпадению в ИНН / ОГРН («77094209» → «ООО Акварель») и названиях («росне» → «ПАО «НК «Роснефть»).
+- Подсказывает только организации или только ИП, или и тех и других. Умеет искать только в действующих или ликвидированных компаниях. Может ограничить подсказки конкретным регионом России.
+- Учитывает, где вы находитесь (в связке с методом [Определение адреса по IP](https://github.com/movemove-io/laravel-dadata#%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B0%D0%B4%D1%80%D0%B5%D1%81%D0%B0-%D0%BF%D0%BE-ip)).
+- Возвращает основные реквизиты компании из ЕГРЮЛ: краткое и полное название, ОПФ, адрес, ОГРН, ИНН, КПП, ОКВЭД, статус организации, ФИО и должность руководителя.
+- В связке с методом [Организация по ИНН](https://github.com/movemove-io/laravel-dadata#) возвращает вагон дополнительной информации: количество сотрудников, все коды ОКВЭД, сведения о налоговой, ПФР и ФСС, документы и лицензии, учредители и руководители, финансовые показатели, реестр малого и среднего бизнеса.
+
+Данный метод не прдназначен:
+- ля 50% компаний налоговая служба пока не сообщает КПП филиалов. Такие филиалы можно найти по ИНН, городу и улице филиала. Например, «7724261610 москва мясницкая» → «Филиал ФГУП "Почта России" (г Москва)».
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+use MoveMoveIo\DaData\Enums\CompanyType;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData prompt organization by string
+    *
+    * @return void
+    */
+    public function promptExample() : void
+    {
+        $dadata = DaDataCompany::prompt('сбербанк', 1, [CompanyStatus::ACTIVE], CompanyType::LEGAL);
+
+        dd($dadata);    
+    }
+
+}
+
+```
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `company`         | `string`  | `false`      |                   | Текст запроса                               |
+| `count`           | `int`     | `true`       | 10                | Количество результатов. Максимум 20         |
+| `status`          | `int`     | `true`       | null              | Ограничение по статусу организации.         |
+| `type`            | `int`     | `true`       | 1                 | Ограничение по типу организации.            |
+| `locations`       | `string`  | `true`       | null              | Ограничение по региону или городу. Двухзначные коды необходимо передавать строкой через `,` запятую. [Список кодов](https://confluence.hflabs.ru/pages/viewpage.action?pageId=204669123#id-%D0%A4%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D0%BF%D0%BE%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D1%83%D0%BE%D1%80%D0%B3%D0%B0%D0%BD%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8(API)-%D0%9A%D0%BE%D0%B4%D1%8B%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2) |
+| `locations_boost` | `string`  | `true`       | null              | Приоритет города при ранжировании. |
+
+**Формирование `status` - ограничение по статусу организации**
+Чтобы искать только действующие компании, сформироуйте массив status как
+ 
+```php
+...
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+...
+$status = [
+    CompanyStatus::ACTIVE
+];
+```
+
+Поиск только среди ликвидируемых и ликвидированных компаний:
+```php
+...
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+...
+$status = [
+    CompanyStatus::LIQUIDATING,
+    CompanyStatus::LIQUIDATED,
+];
+```
+
+**Формирование `type` - Ограничение по типу организации.**
+
+Тип поиска только по юридическим лицам
+```php
+...
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+...
+$type = CompanyStatus::LEGAL;
+```
+
+Тип поиска только по по индивидуальным предпринимателям
+```php
+...
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+...
+$type = CompanyStatus::INDIVIDUAL;
+```
+
+Пример ответа
+
+```php
+array:1 [
+  "suggestions" => array:1 [
+    0 => array:3 [
+      "value" => "ПАО СБЕРБАНК"
+      "unrestricted_value" => "ПАО СБЕРБАНК"
+      "data" => array:33 [
+        "kpp" => "773601001"
+        "capital" => null
+        "management" => array:3 [
+          "name" => "Греф Герман Оскарович"
+          "post" => "ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ"
+          "disqualified" => null
+        ]
+        "founders" => null
+        "managers" => null
+        "branch_type" => "MAIN"
+        "branch_count" => 88
+        "source" => null
+        "qc" => null
+        "hid" => "588a141bc5e17cbc976ec2d0d54149af49d5a4ca16e26ed2effafdf06841d645"
+        "type" => "LEGAL"
+        "state" => array:4 [
+          "status" => "ACTIVE"
+          "actuality_date" => 1601942400000
+          "registration_date" => 677376000000
+          "liquidation_date" => null
+        ]
+        "opf" => array:4 [
+          "type" => "2014"
+          "code" => "12247"
+          "full" => "Публичное акционерное общество"
+          "short" => "ПАО"
+        ]
+        "name" => array:5 [
+          "full_with_opf" => "ПУБЛИЧНОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО "СБЕРБАНК РОССИИ""
+          "short_with_opf" => "ПАО СБЕРБАНК"
+          "latin" => null
+          "full" => "СБЕРБАНК РОССИИ"
+          "short" => "СБЕРБАНК"
+        ]
+        "inn" => "7707083893"
+        "ogrn" => "1027700132195"
+        "okpo" => "00032537"
+        "okato" => "45293554000"
+        "oktmo" => "45397000000"
+        "okogu" => "4100104"
+        "okfs" => "41"
+        "okved" => "64.19"
+        "okveds" => null
+        "authorities" => null
+        "documents" => null
+        "licenses" => null
+        "finance" => null
+        "address" => array:3 [
+          "value" => "г Москва, ул Вавилова, д 19"
+          "unrestricted_value" => "117312, г Москва, Академический р-н, ул Вавилова, д 19"
+          "data" => array:81 [
+            "postal_code" => "117312"
+            "country" => "Россия"
+            "country_iso_code" => "RU"
+            "federal_district" => "Центральный"
+            "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "region_kladr_id" => "7700000000000"
+            "region_iso_code" => "RU-MOW"
+            "region_with_type" => "г Москва"
+            "region_type" => "г"
+            "region_type_full" => "город"
+            "region" => "Москва"
+            "area_fias_id" => null
+            "area_kladr_id" => null
+            "area_with_type" => null
+            "area_type" => null
+            "area_type_full" => null
+            "area" => null
+            "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5"
+            "city_kladr_id" => "7700000000000"
+            "city_with_type" => "г Москва"
+            "city_type" => "г"
+            "city_type_full" => "город"
+            "city" => "Москва"
+            "city_area" => "Юго-западный"
+            "city_district_fias_id" => null
+            "city_district_kladr_id" => null
+            "city_district_with_type" => "Академический р-н"
+            "city_district_type" => "р-н"
+            "city_district_type_full" => "район"
+            "city_district" => "Академический"
+            "settlement_fias_id" => null
+            "settlement_kladr_id" => null
+            "settlement_with_type" => null
+            "settlement_type" => null
+            "settlement_type_full" => null
+            "settlement" => null
+            "street_fias_id" => "25f8f29b-b110-40ab-a48e-9c72f5fb4331"
+            "street_kladr_id" => "77000000000092400"
+            "street_with_type" => "ул Вавилова"
+            "street_type" => "ул"
+            "street_type_full" => "улица"
+            "street" => "Вавилова"
+            "house_fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "house_kladr_id" => "7700000000009240170"
+            "house_type" => "д"
+            "house_type_full" => "дом"
+            "house" => "19"
+            "block_type" => null
+            "block_type_full" => null
+            "block" => null
+            "flat_type" => null
+            "flat_type_full" => null
+            "flat" => null
+            "flat_area" => null
+            "square_meter_price" => null
+            "flat_price" => null
+            "postal_box" => null
+            "fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6"
+            "fias_code" => "77000000000000009240170"
+            "fias_level" => "8"
+            "fias_actuality_state" => "0"
+            "kladr_id" => "7700000000009240170"
+            "geoname_id" => "524901"
+            "capital_marker" => "0"
+            "okato" => "45293554000"
+            "oktmo" => "45397000"
+            "tax_office" => "7736"
+            "tax_office_legal" => "7736"
+            "timezone" => "UTC+3"
+            "geo_lat" => "55.7001865"
+            "geo_lon" => "37.5802234"
+            "beltway_hit" => "IN_MKAD"
+            "beltway_distance" => null
+            "metro" => array:3 [
+              0 => array:3 [
+                "name" => "Ленинский проспект"
+                "line" => "Калужско-Рижская"
+                "distance" => 0.8
+              ]
+              1 => array:3 [
+                "name" => "Площадь Гагарина"
+                "line" => "МЦК"
+                "distance" => 0.8
+              ]
+              2 => array:3 [
+                "name" => "Академическая"
+                "line" => "Калужско-Рижская"
+                "distance" => 1.5
+              ]
+            ]
+            "qc_geo" => "0"
+            "qc_complete" => null
+            "qc_house" => null
+            "history_values" => null
+            "unparsed_parts" => null
+            "source" => "117997, ГОРОД МОСКВА, УЛИЦА ВАВИЛОВА, 19"
+            "qc" => "0"
+          ]
+        ]
+        "phones" => null
+        "emails" => null
+        "ogrn_date" => 1029456000000
+        "okved_type" => "2014"
+        "employee_count" => null
+      ]
+    ]
+  ]
+]
+
+```
+
+Описание ответа
+Таблицу описания полного ответа вы можете получить на старнице [API подсказок по организациям](https://dadata.ru/api/suggest/party/) в разделе **"Что в ответе"**.
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ или секретный ключ или в запросе указан несуществующий ключ  |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\CompanyStatus;
+use MoveMoveIo\DaData\Enums\CompanyType;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+   * DaData prompt organization by string
+   *
+   * @return void
+   */
+   public function promptExample() : void
+    {
+        try {
+            $dadata = DaDataCompany::prompt('сбербанк', 1, [CompanyStatus::ACTIVE], CompanyType::LEGAL);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }    
+    }
+
+}
+
+```
+
+### Поиск аффилированных компаний
+`DaDataCompany::affiliated(string $code, int $count, array $scope)` Находит организации по ИНН учредителей и руководителей. Работает для физлиц и юрлиц.
+
+Часто учредитель или директор не ограничивается участием в одном юрлице, а фигурирует в нескольких. Порой — в десятках разных компаний. Знать об этом полезно как для оценки надёжности контрагента, так и для более эффективного маркетинга и продаж. Чтобы облегчить поиск аффилированных компаний, «Дадата» находит организации по ИНН учредителей и руководителей.
+
+Ищет по ИНН физлиц и юрлиц.
+
+Данный метод не удается протестировать из-за того, что все получаем `403`,  `Operation party/findAffiliated is not permitted`
+
+Пример вызова
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\CompanyScope;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData find affiliated organization exmaple
+    *
+    * @return void
+    */
+    public function affiliatedExample() : void
+    {
+        $dadata = DaDataCompany::affiliated('7736207543', 1, [CompanyScope::MANAGERS]);
+        
+        dd($dadata);
+    }
+
+}
+
+```
+
+Параметры вызова
+
+| **Название**      | **Тип**   | **Optional** | **Default value** |  **Описание**                               |
+|:------------------|:---------:|:------------:|:-----------------:|:--------------------------------------------|
+| `code`            | `string`  | `false`      |                   | Текст запроса                               |
+| `count`           | `int`     | `true`       | 10                | Количество результатов. Максимум 20         |
+| `scope`           | `array`   | `true`       | []                | КПП для поиска по филиалам                  |
+
+**Формирование `scope` - **
+
+Описание ответа
+Таблицу описания полного ответа вы можете получить на старнице [Поиск аффилированных компаний](https://dadata.ru/api/find-affiliated/) в разделе **"Что в ответе"**.
+
+**Exceptions**
+
+При вызове методов, вы можете обрабатывать коды исключений и их сообщения
+
+|       **Код**        |                       **Описание**                                                          |
+|:---------------------|:--------------------------------------------------------------------------------------------|
+| `400`                | Некорректный запрос                                                                         |
+| `401`                | В запросе отсутствует API-ключ или секретный ключ или в запросе указан несуществующий ключ  |
+| `403`                | Не подтверждена почта или недостаточно средств для обработки запроса, пополните баланс      |
+| `405`                | Запрос сделан с методом, отличным от POST                                                   |
+| `429`                | Слишком много запросов в секунду или новых соединений в минуту                              |
+| `5xx`                | Произошла внутренняя ошибка сервиса                                                         |
+
+Более детальную информацию вы можете получить из сообщения исключения.
+
+Пример получения сообщения исключения
+
+```php
+<?php
+
+namespace App;
+
+use MoveMoveIo\DaData\Enums\CompanyScope;
+use MoveMoveIo\DaData\Facades\DaDataCompany;
+
+/**
+ * Class DaData
+ * @package App\DaData
+ */
+class DaData
+{
+
+   /**
+    * DaData find affiliated organization exmaple
+    *
+    * @return void
+    */
+    public function affiliatedExample() : void
+    {
+        try {
+            $dadata = DaDataCompany::affiliated('7736207543', 1, [CompanyScope::MANAGERS]);
+
+            dd($dadata);
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+        }    
     }
 
 }
