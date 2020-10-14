@@ -10,10 +10,10 @@
 composer require movemove-io/laravel-dadata
 ```
 
-Публикация конфигурационного файла. Выполните artsan команду
+Публикация конфигурационного файла. Выполните `artisan` команду
 
 ```shell script
-composer require movemove-io/laravel-dadata
+php artisan vendor:publish --provider="MoveMoveIo\DaData\DaDataServiceProvider"
 ```
 
 Настройка проекта осществляется через `.env` вашего проекта. Вам необходимо указать три параметра
