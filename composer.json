@@ -1,14 +1,29 @@
 {
-    "name": "movemove-io/dadata",
+    "name": "movemove-io/laravel-dadata",
     "description": "Laravel SDK for working with the DaData.RU service API",
+    "keywords": [
+        "movemove-io",
+        "dadata",
+        "laravel",
+        "sdk",
+        "address",
+        "email",
+        "passport",
+        "bank",
+        "name",
+        "patronymic",
+        "surname",
+        "pipisco"
+    ],
     "type": "laravel-package",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "authors": [
         {
-            "name": "Dmitry Kovalev",
+            "name": "Dmitry Kovalev aka Pipisco",
             "email": "d.kovalev@movemove.io",
-            "homepage": "https://movemove.io"
+            "homepage": "https://movemove.io",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "dev",
@@ -23,12 +38,16 @@
         }
     },
     "require": {
-        "php": "^7.2.5",
+        "php": "^7.3",
         "illuminate/support": "^8.8.0",
         "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4.0",
         "orchestra/testbench": "^6.2.0"
-    }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "prefer-stable": true
 }
