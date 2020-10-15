@@ -36,6 +36,9 @@ class DaDataServiceProvider extends ServiceProvider
         $this->app->singleton('da_data_bank', function () {
             return new DaDataBank();
         });
+        $this->app->singleton('da_data_passport', function () {
+            return new DaDataPassport();
+        });
 
         $this->app->alias('da_data_address', DaDataAddress::class);
         $this->app->alias('da_data_name', DaDataName::class);
@@ -43,6 +46,7 @@ class DaDataServiceProvider extends ServiceProvider
         $this->app->alias('da_data_phone', DaDataPhone::class);
         $this->app->alias('da_data_company', DaDataCompany::class);
         $this->app->alias('da_data_bank', DaDataCompany::class);
+        $this->app->alias('da_data_passport', DaDataPassport::class);
     }
 
     /**

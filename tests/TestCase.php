@@ -21,6 +21,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
             'DaDataPhone'      => 'MoveMoveIo\DaData\Facades\DaDataPhone',
             'DaDataCompany'    => 'MoveMoveIo\DaData\Facades\DaDataCompany',
             'DaDataBank'       => 'MoveMoveIo\DaData\Facades\DaDataBank',
+            'DaDataPassport'   => 'MoveMoveIo\DaData\Facades\DaDataPassport',
         ];
     }
 
