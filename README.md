@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.com/movemove-io/laravel-dadata.svg?token=E8WZTvpNHoqu5bG7wouf&branch=master)](https://travis-ci.com/movemove-io/laravel-dadata)
-
 # DaData Laravel SDK Package
+[![Build Status](https://travis-ci.com/movemove-io/laravel-dadata.svg?token=E8WZTvpNHoqu5bG7wouf&branch=master)](https://travis-ci.com/movemove-io/laravel-dadata)
+[![Latest Stable Version](https://poser.pugx.org/movemove-io/laravel-dadata/v)](//packagist.org/packages/movemove-io/laravel-dadata)
+[![Total Downloads](https://poser.pugx.org/movemove-io/laravel-dadata/downloads)](//packagist.org/packages/movemove-io/laravel-dadata)
+[![License](https://poser.pugx.org/movemove-io/laravel-dadata/license)](//packagist.org/packages/movemove-io/laravel-dadata)
+
 *DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/). Данный пакет является альтернативным и поддерживает больше методов, чем официальный пакет [fomvasss/laravel-dadata](https://github.com/fomvasss/laravel-dadata). Пакет [movemove-io/laravel-dadata](https://github.com/movemove-io/laravel-dadata) не является форком от официальнго пакета. Основной позыв в создании данного пакета - это поддержка последних stable релизов [PHP](https://www.php.net/downloads) и [Laravel](https://github.com/laravel/laravel) 
 
 ## Установка
