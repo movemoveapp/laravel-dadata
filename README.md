@@ -13,6 +13,16 @@
 composer require movemoveapp/laravel-dadata
 ```
 
+Добавьте `DaDataServiceProvider` в конфигурационный файл `config/app.php`, в раздел `providers` как 
+
+```shell script
+'providers' => [
+  // ...
+  MoveMoveIo\DaData\DaDataServiceProvider::class,
+],
+
+``` 
+
 Публикация конфигурационного файла. Выполните `artisan` команду
 
 ```shell script
