@@ -1,8 +1,8 @@
 {
-    "name": "movemove-io/laravel-dadata",
+    "name": "movemoveapp/laravel-dadata",
     "description": "Laravel SDK for working with the DaData.RU service API",
     "keywords": [
-        "movemove-io",
+        "movemoveapp",
         "dadata",
         "laravel",
         "sdk",
@@ -17,7 +17,7 @@
     ],
     "type": "laravel-package",
     "license": "MIT",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "authors": [
         {
             "name": "Dmitry Kovalev aka Pipisco",
@@ -50,3 +50,4 @@
     },
     "prefer-stable": true
 }
+
