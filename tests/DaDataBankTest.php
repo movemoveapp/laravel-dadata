@@ -66,7 +66,8 @@ class DaDataBankTest extends TestCase
                         "payment_city" => "г Москва",
                         "state" => [
                             "status" => "ACTIVE",
-                            "actuality_date" => 1602720000000,
+                            'code' => null,
+                            "actuality_date" => 1610323200000,
                             "registration_date" => 677376000000,
                             "liquidation_date" => null,
                         ],
@@ -125,6 +126,7 @@ class DaDataBankTest extends TestCase
                                 "block_type" => null,
                                 "block_type_full" => null,
                                 "block" => null,
+                                'flat_fias_id' => null,
                                 "flat_type" => null,
                                 "flat_type_full" => null,
                                 "flat" => null,
