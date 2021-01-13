@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/movemoveapp/laravel-dadata/downloads)](//packagist.org/packages/movemoveapp/laravel-dadata)
 [![License](https://poser.pugx.org/movemoveapp/laravel-dadata/license)](//packagist.org/packages/movemoveapp/laravel-dadata)
 
-*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/). Данный пакет является альтернативным и поддерживает больше методов, чем официальный пакет [fomvasss/laravel-dadata](https://github.com/fomvasss/laravel-dadata). Пакет [movemoveapp/laravel-dadata](https://github.com/movemoveapp/laravel-dadata) не является форком от официальнго пакета. Основной позыв в создании данного пакета - это поддержка последних stable релизов [PHP](https://www.php.net/downloads) и [Laravel](https://github.com/laravel/laravel) 
+*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/). 
 
 ## Установка
 Вы можете установить пакет через composer:

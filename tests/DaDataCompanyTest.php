@@ -67,7 +67,7 @@ class DaDataCompanyTest extends TestCase
                         "state" => [
                             "status" => "ACTIVE",
                             'code' => null,
-                            "actuality_date" => 1609459200000,
+                            "actuality_date" => 1610323200000,
                             "registration_date" => 677376000000,
                             "liquidation_date" => null,
                         ],
