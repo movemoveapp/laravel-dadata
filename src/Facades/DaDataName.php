@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class DaDataName
  * @package MoveMoveIo\DaData\Facades
+ * @method \MoveMoveIo\DaData\DaDataName standardization(string $name)
+ * @method \MoveMoveIo\DaData\DaDataName prompt(string $name, int $count, int $gender, array $parts)
  */
 class DaDataName extends Facade
 {

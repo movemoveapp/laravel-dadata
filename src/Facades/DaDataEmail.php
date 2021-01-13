@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class DaDataEmail
  * @package MoveMoveIo\DaData\Facades
+ * @method \MoveMoveIo\DaData\DaDataEmail standardization(string $email)
+ * @method \MoveMoveIo\DaData\DaDataEmail prompt(string $email, int $count)
  */
 class DaDataEmail extends Facade
 {
