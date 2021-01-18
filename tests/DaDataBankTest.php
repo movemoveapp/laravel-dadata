@@ -67,7 +67,7 @@ class DaDataBankTest extends TestCase
                         "state" => [
                             "status" => "ACTIVE",
                             'code' => null,
-                            "actuality_date" => 1610409600000,
+                            "actuality_date" => 1610755200000,
                             "registration_date" => 677376000000,
                             "liquidation_date" => null,
                         ],

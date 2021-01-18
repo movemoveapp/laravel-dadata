@@ -48,6 +48,22 @@
     "scripts": {
         "test": "phpunit"
     },
-    "prefer-stable": true
+    "prefer-stable": true,
+    "extra": {
+        "laravel":{
+            "providers": [
+                "MoveMoveIo\\DaData\\DaDataServiceProvider"
+            ],
+            "aliases": {
+                "DaDataAddress": "MoveMoveIo\\DaData\\Facades\\DaDataAddress",
+                "DaDataName": "MoveMoveIo\\DaData\\Facades\\DaDataName",
+                "DaDataEmail": "MoveMoveIo\\DaData\\Facades\\DaDataEmail",
+                "DaDataPhone": "MoveMoveIo\\DaData\\Facades\\DaDataPhone",
+                "DaDataCompany": "MoveMoveIo\\DaData\\Facades\\DaDataCompany",
+                "DaDataBank": "MoveMoveIo\\DaData\\Facades\\DaDataBank",
+                "DaDataPassport": "MoveMoveIo\\DaData\\Facades\\DaDataPassport"
+            }
+        }
+    }
 }
 
