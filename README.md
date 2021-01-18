@@ -4,7 +4,7 @@
 [![Total Downloads](https://poser.pugx.org/movemoveapp/laravel-dadata/downloads)](//packagist.org/packages/movemoveapp/laravel-dadata)
 [![License](https://poser.pugx.org/movemoveapp/laravel-dadata/license)](//packagist.org/packages/movemoveapp/laravel-dadata)
 
-*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/). 
+*DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/) от [MoveMoveApp](https://movemoveapp.com/)
 
 ## Установка
 Вы можете установить пакет через composer:
@@ -13,7 +13,7 @@
 composer require movemoveapp/laravel-dadata
 ```
 
-Добавьте `DaDataServiceProvider` в конфигурационный файл `config/app.php`, в раздел `providers` как 
+Если вы используете версию Laravel ниже **5.5**, то зарегистрируйте `DaDataServiceProvider` вручную, добавив в `config/app.php`в массиве `providers`:
 
 ```shell script
 'providers' => [
