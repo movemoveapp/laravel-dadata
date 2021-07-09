@@ -37,7 +37,7 @@ class DaDataCompany extends DaDataService
             'count'             => $count,
             'kpp'               => $kpp,
             'branch_type'       => BranchType::$map[$branch_type] ?? BranchType::$map[BranchType::MAIN],
-            'type'              => CompanyStatus::$map[$type] ?? null,
+            'type'              => CompanyType::$map[$type] ?? null,
         ]);
     }
 
