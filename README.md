@@ -1,5 +1,5 @@
 # <a href="https://movemoveapp.com" target="_blank"><img src="https://avatars2.githubusercontent.com/u/69967331?s=20&v=4" width="20"></a> DaData Laravel SDK Package
-[![Build Status](https://travis-ci.com/movemoveapp/laravel-dadata.svg?token=E8WZTvpNHoqu5bG7wouf&branch=master)](https://travis-ci.com/movemoveapp/laravel-dadata)
+[![Build Status](https://app.travis-ci.com/github/movemoveapp/laravel-dadata)](https://app.travis-ci.com/movemoveapp/laravel-dadata.svg?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/movemoveapp/laravel-dadata/v)](//packagist.org/packages/movemoveapp/laravel-dadata)
 [![Total Downloads](https://poser.pugx.org/movemoveapp/laravel-dadata/downloads)](//packagist.org/packages/movemoveapp/laravel-dadata)
 [![License](https://poser.pugx.org/movemoveapp/laravel-dadata/license)](//packagist.org/packages/movemoveapp/laravel-dadata)
