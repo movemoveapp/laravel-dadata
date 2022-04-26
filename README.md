@@ -6,6 +6,11 @@
 
 *DaData Laravel Package* - PHP SDK [Laravel](https://github.com/laravel/laravel) пакет для взаимодействия с API [DaData.ru](https://dadata.ru/) от [MoveMoveApp](https://movemoveapp.com/)
 
+## Требования
+- Версии PHP: 7.3, 7.4, 8.0, 8.1
+- Версии Laravel: 7.x, 8.x, 9.x
+- Версии Guzzle": 7.0, 7.2
+
 ## Установка
 Вы можете установить пакет через composer:
 
