@@ -20,7 +20,7 @@ class DaDataBankTest extends TestCase
     {
         $this->assertSame(
             DaDataBank::id('044525225'),
-            $this->BankProvider()
+            $this->findBankByIDProvider()
         );
     }
 
@@ -31,154 +31,21 @@ class DaDataBankTest extends TestCase
     {
         $this->assertSame(
             DaDataBank::prompt('сбербанк', 1, [BankStatus::ACTIVE], [BankType::BANK]),
-            $this->BankProvider()
+            $this->promptFromStringProvider()
         );
     }
 
     /**
-     * @return array|array[]
+     * @return array|array[],
      */
-    public function BankProvider() : array
+    public function findBankByIDProvider(): array
     {
-        return [
-            "suggestions" => [
-                [
-                    "value" => "ПАО Сбербанк",
-                    "unrestricted_value" => "ПАО Сбербанк",
-                    "data" => [
-                        "opf" => [
-                            "type" => "BANK",
-                            "full" => null,
-                            "short" => null,
-                        ],
-                        "name" => [
-                            "payment" => "ПАО СБЕРБАНК",
-                            "full" => null,
-                            "short" => "ПАО Сбербанк",
-                        ],
-                        "bic" => "044525225",
-                        "swift" => "SABRRUMM",
-                        "inn" => "7707083893",
-                        "kpp" => "773601001",
-                        "okpo" => null,
-                        "correspondent_account" => "30101810400000000225",
-                        "registration_number" => "1481",
-                        "payment_city" => "г Москва",
-                        "state" => [
-                            "status" => "ACTIVE",
-                            'code' => null,
-                            "actuality_date" => 1610755200000,
-                            "registration_date" => 677376000000,
-                            "liquidation_date" => null,
-                        ],
-                        "rkc" => null,
-                        "address" => [
-                            "value" => "г Москва, ул Вавилова, д 19",
-                            "unrestricted_value" => "117312, г Москва, Академический р-н, ул Вавилова, д 19",
-                            "data" => [
-                                "postal_code" => "117312",
-                                "country" => "Россия",
-                                "country_iso_code" => "RU",
-                                "federal_district" => "Центральный",
-                                "region_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
-                                "region_kladr_id" => "7700000000000",
-                                "region_iso_code" => "RU-MOW",
-                                "region_with_type" => "г Москва",
-                                "region_type" => "г",
-                                "region_type_full" => "город",
-                                "region" => "Москва",
-                                "area_fias_id" => null,
-                                "area_kladr_id" => null,
-                                "area_with_type" => null,
-                                "area_type" => null,
-                                "area_type_full" => null,
-                                "area" => null,
-                                "city_fias_id" => "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
-                                "city_kladr_id" => "7700000000000",
-                                "city_with_type" => "г Москва",
-                                "city_type" => "г",
-                                "city_type_full" => "город",
-                                "city" => "Москва",
-                                "city_area" => "Юго-западный",
-                                "city_district_fias_id" => null,
-                                "city_district_kladr_id" => null,
-                                "city_district_with_type" => "Академический р-н",
-                                "city_district_type" => "р-н",
-                                "city_district_type_full" => "район",
-                                "city_district" => "Академический",
-                                "settlement_fias_id" => null,
-                                "settlement_kladr_id" => null,
-                                "settlement_with_type" => null,
-                                "settlement_type" => null,
-                                "settlement_type_full" => null,
-                                "settlement" => null,
-                                "street_fias_id" => "25f8f29b-b110-40ab-a48e-9c72f5fb4331",
-                                "street_kladr_id" => "77000000000092400",
-                                "street_with_type" => "ул Вавилова",
-                                "street_type" => "ул",
-                                "street_type_full" => "улица",
-                                "street" => "Вавилова",
-                                "house_fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6",
-                                "house_kladr_id" => "7700000000009240170",
-                                "house_type" => "д",
-                                "house_type_full" => "дом",
-                                "house" => "19",
-                                "block_type" => null,
-                                "block_type_full" => null,
-                                "block" => null,
-                                'flat_fias_id' => null,
-                                "flat_type" => null,
-                                "flat_type_full" => null,
-                                "flat" => null,
-                                "flat_area" => null,
-                                "square_meter_price" => null,
-                                "flat_price" => null,
-                                "postal_box" => null,
-                                "fias_id" => "93409d8c-d8d4-4491-838f-f9aa1678b5e6",
-                                "fias_code" => "77000000000000009240170",
-                                "fias_level" => "8",
-                                "fias_actuality_state" => "0",
-                                "kladr_id" => "7700000000009240170",
-                                "geoname_id" => "524901",
-                                "capital_marker" => "0",
-                                "okato" => "45293554000",
-                                "oktmo" => "45397000",
-                                "tax_office" => "7736",
-                                "tax_office_legal" => "7736",
-                                "timezone" => "UTC+3",
-                                "geo_lat" => "55.7001865",
-                                "geo_lon" => "37.5802234",
-                                "beltway_hit" => "IN_MKAD",
-                                "beltway_distance" => null,
-                                "metro" => [
-                                    [
-                                        "name" => "Ленинский проспект",
-                                        "line" => "Калужско-Рижская",
-                                        "distance" => 0.8,
-                                    ], [
-                                        "name" => "Площадь Гагарина",
-                                        "line" => "МЦК",
-                                        "distance" => 0.8,
-                                    ], [
-                                        "name" => "Академическая",
-                                        "line" => "Калужско-Рижская",
-                                        "distance" => 1.5,
-                                    ],
-                                ],
-                                "qc_geo" => "0",
-                                "qc_complete" => "5",
-                                "qc_house" => "2",
-                                "history_values" => null,
-                                "unparsed_parts" => null,
-                                "source" => "117997, г Москва, ул Вавилова, 19",
-                                "qc" => "0",
-                            ]
-                        ],
-                        "phones" => null,
-                    ]
-                ]
-            ]
-        ];
+        return json_decode('{"suggestions":[{"value":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a","unrestricted_value":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a","data":{"opf":{"type":"BANK","full":null,"short":null},"name":{"payment":"\u041f\u0410\u041e \u0421\u0411\u0415\u0420\u0411\u0410\u041d\u041a","full":null,"short":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a"},"bic":"044525225","swift":"SABRRUMM012","inn":"7707083893","kpp":"773601001","okpo":null,"correspondent_account":"30101810400000000225","treasury_accounts":null,"registration_number":"1481","payment_city":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","state":{"status":"ACTIVE","code":null,"actuality_date":1650758400000,"registration_date":677376000000,"liquidation_date":null},"rkc":null,"cbr":{"opf":{"type":"CBR","full":null,"short":null},"name":{"payment":"\u0413\u0423 \u0411\u0410\u041d\u041a\u0410 \u0420\u041e\u0421\u0421\u0418\u0418 \u041f\u041e \u0426\u0424\u041e","full":null,"short":null},"bic":"044525000","swift":null,"inn":null,"kpp":null,"okpo":null,"correspondent_account":null,"treasury_accounts":null,"registration_number":null,"payment_city":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430 35","state":{"status":"ACTIVE","code":null,"actuality_date":1650758400000,"registration_date":null,"liquidation_date":null},"rkc":null,"cbr":null,"address":{"value":"115035, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430 35, \u0443\u043b \u0411\u0430\u043b\u0447\u0443\u0433, 2","unrestricted_value":"115035, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430 35, \u0443\u043b \u0411\u0430\u043b\u0447\u0443\u0433, 2","data":null},"phones":null},"address":{"value":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, \u0434 19","unrestricted_value":"117312, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, \u0434 19","data":{"postal_code":"117312","country":"\u0420\u043e\u0441\u0441\u0438\u044f","country_iso_code":"RU","federal_district":"\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u044b\u0439","region_fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","region_kladr_id":"7700000000000","region_iso_code":"RU-MOW","region_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","region_type":"\u0433","region_type_full":"\u0433\u043e\u0440\u043e\u0434","region":"\u041c\u043e\u0441\u043a\u0432\u0430","area_fias_id":null,"area_kladr_id":null,"area_with_type":null,"area_type":null,"area_type_full":null,"area":null,"city_fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","city_kladr_id":"7700000000000","city_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","city_type":"\u0433","city_type_full":"\u0433\u043e\u0440\u043e\u0434","city":"\u041c\u043e\u0441\u043a\u0432\u0430","city_area":"\u042e\u0433\u043e-\u0437\u0430\u043f\u0430\u0434\u043d\u044b\u0439","city_district_fias_id":null,"city_district_kladr_id":null,"city_district_with_type":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d","city_district_type":"\u0440-\u043d","city_district_type_full":"\u0440\u0430\u0439\u043e\u043d","city_district":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439","settlement_fias_id":null,"settlement_kladr_id":null,"settlement_with_type":null,"settlement_type":null,"settlement_type_full":null,"settlement":null,"street_fias_id":"25f8f29b-b110-40ab-a48e-9c72f5fb4331","street_kladr_id":"77000000000092400","street_with_type":"\u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430","street_type":"\u0443\u043b","street_type_full":"\u0443\u043b\u0438\u0446\u0430","street":"\u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430","stead_fias_id":null,"stead_cadnum":null,"stead_type":null,"stead_type_full":null,"stead":null,"house_fias_id":"93409d8c-d8d4-4491-838f-f9aa1678b5e6","house_kladr_id":"7700000000009240170","house_cadnum":"77:06:0002008:1036","house_type":"\u0434","house_type_full":"\u0434\u043e\u043c","house":"19","block_type":null,"block_type_full":null,"block":null,"entrance":null,"floor":null,"flat_fias_id":null,"flat_cadnum":null,"flat_type":null,"flat_type_full":null,"flat":null,"flat_area":null,"square_meter_price":null,"flat_price":null,"postal_box":null,"fias_id":"93409d8c-d8d4-4491-838f-f9aa1678b5e6","fias_code":"77000000000000009240170","fias_level":"8","fias_actuality_state":"0","kladr_id":"7700000000009240170","geoname_id":"524901","capital_marker":"0","okato":"45293554000","oktmo":"45397000","tax_office":"7736","tax_office_legal":"7736","timezone":"UTC+3","geo_lat":"55.7001865","geo_lon":"37.5802234","beltway_hit":"IN_MKAD","beltway_distance":null,"metro":[{"name":"\u041b\u0435\u043d\u0438\u043d\u0441\u043a\u0438\u0439 \u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442","line":"\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u043e-\u0420\u0438\u0436\u0441\u043a\u0430\u044f","distance":0.8},{"name":"\u041f\u043b\u043e\u0449\u0430\u0434\u044c \u0413\u0430\u0433\u0430\u0440\u0438\u043d\u0430","line":"\u041c\u0426\u041a","distance":0.8},{"name":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f","line":"\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u043e-\u0420\u0438\u0436\u0441\u043a\u0430\u044f","distance":1.5}],"divisions":{"administrative":{"area":null,"city":{"fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","kladr_id":"7700000000000","type":"\u0433","type_full":"\u0433\u043e\u0440\u043e\u0434","name":"\u041c\u043e\u0441\u043a\u0432\u0430","name_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430"},"settlement":null,"city_district":{"fias_id":null,"kladr_id":null,"type":"\u0440-\u043d","type_full":"\u0440\u0430\u0439\u043e\u043d","name":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439","name_with_type":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d"}},"municipal":null},"qc_geo":"0","qc_complete":"5","qc_house":"2","history_values":null,"unparsed_parts":null,"source":"117997, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, 19","qc":"0"}},"phones":null}}]}', true);
+    }
+
+    public function promptFromStringProvider(): array
+    {
+        return json_decode('{"suggestions":[{"value":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a","unrestricted_value":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a","data":{"opf":{"type":"BANK","full":null,"short":null},"name":{"payment":"\u041f\u0410\u041e \u0421\u0411\u0415\u0420\u0411\u0410\u041d\u041a","full":null,"short":"\u041f\u0410\u041e \u0421\u0431\u0435\u0440\u0431\u0430\u043d\u043a"},"bic":"044525225","swift":"SABRRUMM012","inn":"7707083893","kpp":"773601001","okpo":null,"correspondent_account":"30101810400000000225","treasury_accounts":null,"registration_number":"1481","payment_city":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","state":{"status":"ACTIVE","code":null,"actuality_date":1650758400000,"registration_date":677376000000,"liquidation_date":null},"rkc":null,"cbr":null,"address":{"value":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, \u0434 19","unrestricted_value":"117312, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, \u0434 19","data":{"postal_code":"117312","country":"\u0420\u043e\u0441\u0441\u0438\u044f","country_iso_code":"RU","federal_district":"\u0426\u0435\u043d\u0442\u0440\u0430\u043b\u044c\u043d\u044b\u0439","region_fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","region_kladr_id":"7700000000000","region_iso_code":"RU-MOW","region_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","region_type":"\u0433","region_type_full":"\u0433\u043e\u0440\u043e\u0434","region":"\u041c\u043e\u0441\u043a\u0432\u0430","area_fias_id":null,"area_kladr_id":null,"area_with_type":null,"area_type":null,"area_type_full":null,"area":null,"city_fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","city_kladr_id":"7700000000000","city_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430","city_type":"\u0433","city_type_full":"\u0433\u043e\u0440\u043e\u0434","city":"\u041c\u043e\u0441\u043a\u0432\u0430","city_area":"\u042e\u0433\u043e-\u0437\u0430\u043f\u0430\u0434\u043d\u044b\u0439","city_district_fias_id":null,"city_district_kladr_id":null,"city_district_with_type":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d","city_district_type":"\u0440-\u043d","city_district_type_full":"\u0440\u0430\u0439\u043e\u043d","city_district":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439","settlement_fias_id":null,"settlement_kladr_id":null,"settlement_with_type":null,"settlement_type":null,"settlement_type_full":null,"settlement":null,"street_fias_id":"25f8f29b-b110-40ab-a48e-9c72f5fb4331","street_kladr_id":"77000000000092400","street_with_type":"\u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430","street_type":"\u0443\u043b","street_type_full":"\u0443\u043b\u0438\u0446\u0430","street":"\u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430","stead_fias_id":null,"stead_cadnum":null,"stead_type":null,"stead_type_full":null,"stead":null,"house_fias_id":"93409d8c-d8d4-4491-838f-f9aa1678b5e6","house_kladr_id":"7700000000009240170","house_cadnum":"77:06:0002008:1036","house_type":"\u0434","house_type_full":"\u0434\u043e\u043c","house":"19","block_type":null,"block_type_full":null,"block":null,"entrance":null,"floor":null,"flat_fias_id":null,"flat_cadnum":null,"flat_type":null,"flat_type_full":null,"flat":null,"flat_area":null,"square_meter_price":null,"flat_price":null,"postal_box":null,"fias_id":"93409d8c-d8d4-4491-838f-f9aa1678b5e6","fias_code":"77000000000000009240170","fias_level":"8","fias_actuality_state":"0","kladr_id":"7700000000009240170","geoname_id":"524901","capital_marker":"0","okato":"45293554000","oktmo":"45397000","tax_office":"7736","tax_office_legal":"7736","timezone":"UTC+3","geo_lat":"55.7001865","geo_lon":"37.5802234","beltway_hit":"IN_MKAD","beltway_distance":null,"metro":[{"name":"\u041b\u0435\u043d\u0438\u043d\u0441\u043a\u0438\u0439 \u043f\u0440\u043e\u0441\u043f\u0435\u043a\u0442","line":"\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u043e-\u0420\u0438\u0436\u0441\u043a\u0430\u044f","distance":0.8},{"name":"\u041f\u043b\u043e\u0449\u0430\u0434\u044c \u0413\u0430\u0433\u0430\u0440\u0438\u043d\u0430","line":"\u041c\u0426\u041a","distance":0.8},{"name":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f","line":"\u041a\u0430\u043b\u0443\u0436\u0441\u043a\u043e-\u0420\u0438\u0436\u0441\u043a\u0430\u044f","distance":1.5}],"divisions":{"administrative":{"area":null,"city":{"fias_id":"0c5b2444-70a0-4932-980c-b4dc0d3f02b5","kladr_id":"7700000000000","type":"\u0433","type_full":"\u0433\u043e\u0440\u043e\u0434","name":"\u041c\u043e\u0441\u043a\u0432\u0430","name_with_type":"\u0433 \u041c\u043e\u0441\u043a\u0432\u0430"},"settlement":null,"city_district":{"fias_id":null,"kladr_id":null,"type":"\u0440-\u043d","type_full":"\u0440\u0430\u0439\u043e\u043d","name":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439","name_with_type":"\u0410\u043a\u0430\u0434\u0435\u043c\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0440-\u043d"}},"municipal":null},"qc_geo":"0","qc_complete":"5","qc_house":"2","history_values":null,"unparsed_parts":null,"source":"117997, \u0433 \u041c\u043e\u0441\u043a\u0432\u0430, \u0443\u043b \u0412\u0430\u0432\u0438\u043b\u043e\u0432\u0430, 19","qc":"0"}},"phones":null}}]}', true);
     }
 
 }
