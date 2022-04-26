@@ -20,7 +20,7 @@
         </whitelist>
     </filter>
     <php>
-        <env name="DADATA_TOKEN" value="c2d411de0a688a3822fc1be871991415979157d4"/>
-        <env name="DADATA_SECRET" value="6c9e9f1ef36af08721599080332151b335f0107e"/>
+        <env name="DADATA_TOKEN" value="38dd7cbbdc61b2b1cdc1cac5fb990b4645f2cf5f"/>
+        <env name="DADATA_SECRET" value="1a57f8b994d234a1ed27f59b0f12e6081c0afd3e"/>
     </php>
 </phpunit>
