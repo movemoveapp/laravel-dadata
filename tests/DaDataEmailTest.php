@@ -58,21 +58,21 @@ class DaDataEmailTest extends TestCase
         return [
             "suggestions" => [
                 [
-                    "value" => "anton@mail.ru",
-                    "unrestricted_value" => "anton@mail.ru",
-                    "data" => [
-                        "local" => "anton",
-                        "domain" => "mail.ru",
-                        "type" => null,
-                        "source" => null,
-                        "qc" => null,
-                    ]
-                ], [
                     "value" => "anton@gmail.com",
                     "unrestricted_value" => "anton@gmail.com",
                     "data" => [
                         "local" => "anton",
                         "domain" => "gmail.com",
+                        "type" => null,
+                        "source" => null,
+                        "qc" => null,
+                    ]
+                ], [
+                    "value" => "anton@mail.ru",
+                    "unrestricted_value" => "anton@mail.ru",
+                    "data" => [
+                        "local" => "anton",
+                        "domain" => "mail.ru",
                         "type" => null,
                         "source" => null,
                         "qc" => null,

@@ -1,14 +1,13 @@
 branches:
   only:
     - master
-    - stable
     - develop
 
 language: php
 
 php:
   - 7.4
-
+  - 8.1
 env:
   - LARAVEL_VERSION=8.*
 
