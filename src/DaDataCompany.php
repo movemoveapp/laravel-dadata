@@ -49,7 +49,7 @@ class DaDataCompany extends DaDataService
      * @param string $company
      * @param int $count
      * @param array $status
-     * @param int $type
+     * @param int|null $type
      * @param string|null $locations
      * @param string|null $locations_boost
      * @return array
@@ -58,7 +58,7 @@ class DaDataCompany extends DaDataService
     public function prompt(string $company,
                            int $count = 10,
                            array $status = [CompanyStatus::ACTIVE],
-                           int $type = CompanyType::INDIVIDUAL,
+                           ?int $type = CompanyType::INDIVIDUAL,
                            string $locations = null,
                            string $locations_boost = null
 
