@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * Class DaDataAddress
  * @package MoveMoveIo\DaData\Facades
  * @method \MoveMoveIo\DaData\DaDataAddress standardization(string $address)
- * @method \MoveMoveIo\DaData\DaDataAddress prompt(string $query, int $count, int $language, array $locations, array $locations_geo, array $locations_boost, array $from_bound, array $to_bound)
+ * @method array prompt(string $query, int $count = 10, int $language = Language::RU, array $locations = [], array $locations_geo = [], array $locations_boost = [], array $from_bound = [], array $to_bound = [])
  * @method \MoveMoveIo\DaData\DaDataAddress geolocate(float $lat, float $lon, int $count, int $radius_meters, int $language)
  * @method \MoveMoveIo\DaData\DaDataAddress iplocate(string $ip, int $count, int $language)
  * @method \MoveMoveIo\DaData\DaDataAddress id(string $id, int $count, int $language)
