@@ -2,23 +2,13 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class CompanyStatus
- */
-class CompanyStatus
+use MoveMoveIo\DaData\Helpers\Enum;
+
+enum CompanyStatus:string
 {
+    use Enum;
 
-    const ACTIVE        = 1;
-    const LIQUIDATING   = 2;
-    const LIQUIDATED    = 3;
-
-    /**
-     * @var string[]
-     */
-    public static $map  = [
-        self::ACTIVE        => 'ACTIVE',
-        self::LIQUIDATING   => 'LIQUIDATING',
-        self::LIQUIDATED    => 'LIQUIDATED',
-    ];
-
+    const ACTIVE        = 'ACTIVE';
+    const LIQUIDATING   = 'LIQUIDATING';
+    const LIQUIDATED    = 'LIQUIDATED';
 }

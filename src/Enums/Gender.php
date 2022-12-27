@@ -2,20 +2,13 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class Gender
- * @package MoveMoveIo\DaData\Enums
- */
-class Gender
+use MoveMoveIo\DaData\Helpers\Enum;
+
+enum Gender:string
 {
-    const UNKNOWN   = 0;
-    const MALE      = 1;
-    const FEMALE    = 2;
-
-    public static $map = [
-        self::UNKNOWN   => 'UNKNOWN',
-        self::MALE      => 'MALE',
-        self::FEMALE    => 'FEMALE',
-    ];
-
+    use Enum;
+    
+    const UNKNOWN   = 'UNKNOWN';
+    const MALE      = 'MALE';
+    const FEMALE    = 'FEMALE';
 }

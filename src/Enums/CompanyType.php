@@ -2,21 +2,12 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class CompanyType
- */
-class CompanyType
+use MoveMoveIo\DaData\Helpers\Enum;
+
+enum CompanyType:string
 {
+    use Enum;
 
-    const LEGAL      = 0;
-    const INDIVIDUAL = 1;
-
-    /**
-     * @var string[]
-     */
-    public static $map = [
-        self::LEGAL         => 'LEGAL',
-        self::INDIVIDUAL    => 'INDIVIDUAL',
-    ];
-
+    case LEGAL      = 'LEGAL';
+    case INDIVIDUAL = 'INDIVIDUAL';
 }

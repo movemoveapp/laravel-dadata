@@ -2,22 +2,9 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class CompanyScope
- * @package MoveMoveIo\DaData\Enums
- */
-class CompanyScope
+enum CompanyScope:string
 {
 
-    const FOUNDERS = 1;
-    const MANAGERS = 2;
-
-    /**
-     * @var string[]
-     */
-    public static $map  = [
-        self::FOUNDERS => 'FOUNDERS',
-        self::MANAGERS => 'MANAGERS',
-    ];
-
+    const FOUNDERS = 'FOUNDERS';
+    const MANAGERS = 'MANAGERS';
 }

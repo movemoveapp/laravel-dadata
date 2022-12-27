@@ -2,11 +2,13 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class BankStatus
- * @package MoveMoveIo\DaData\Enums
- */
-class BankStatus extends CompanyStatus
-{
+use MoveMoveIo\DaData\Helpers\Enum;
 
+enum BankStatus:string
+{
+    use Enum;
+
+    const ACTIVE        = 'ACTIVE';
+    const LIQUIDATING   = 'LIQUIDATING';
+    const LIQUIDATED    = 'LIQUIDATED';
 }

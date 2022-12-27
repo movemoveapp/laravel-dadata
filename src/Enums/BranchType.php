@@ -2,22 +2,16 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
+use MoveMoveIo\DaData\Helpers\Enum;
+
 /**
  * Class BranchType
  * @package MoveMoveIo\DaData\Enums
  */
-class BranchType
+enum BranchType:string
 {
+    use Enum;
 
-    const MAIN   = 1;
-    const BRANCH = 2;
-
-    /**
-     * @var string[]
-     */
-    public static $map  = [
-        self::MAIN     => 'MAIN',
-        self::BRANCH   => 'BRANCH',
-    ];
-
+    const MAIN   = 'MAIN';
+    const BRANCH = 'BRANCH';
 }

@@ -2,30 +2,16 @@
 
 namespace MoveMoveIo\DaData\Enums;
 
-/**
- * Class BankType
- * @package MoveMoveIo\DaData\Enums
- */
-class BankType
+use MoveMoveIo\DaData\Helpers\Enum;
+
+enum BankType:string
 {
+    use Enum;
 
-    const BANK          = 0;
-    const NKO           = 1;
-    const BANK_BRANCH   = 2;
-    const NKO_BRANCH    = 3;
-    const RKC           = 4;
-    const OTHER         = 5;
-
-    /**
-     * @var string[]
-     */
-    public static $map = [
-        self::BANK          => 'BANK',
-        self::NKO           => 'NKO',
-        self::BANK_BRANCH   => 'BANK_BRANCH',
-        self::NKO_BRANCH    => 'NKO_BRANCH',
-        self::RKC           => 'RKC',
-        self::OTHER         => 'OTHER',
-    ];
-
+    const BANK          = 'BANK';
+    const NKO           = 'NKO';
+    const BANK_BRANCH   = 'BANK_BRANCH';
+    const NKO_BRANCH    = 'NKO_BRANCH';
+    const RKC           = 'RKC';
+    const OTHER         = 'OTHER';
 }
