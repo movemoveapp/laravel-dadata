@@ -35,7 +35,7 @@ php artisan vendor:publish --provider="MoveMoveIo\DaData\DaDataServiceProvider"
 ```
 
 Настройка проекта осществляется через `.env` вашего проекта. Вам необходимо указать три параметра
-- `DADATA_TOKEN` - token для раоты с API DaData
+- `DADATA_TOKEN` - token для работы с API DaData
 - `DADATA_SECRET` - secret для работы с API DaData
 - `DADATA_TIMEOUT` - максимальное время ожидания ответа от API сервисов DaData в секундах. По умолчанию это значение равно 10 секунд.
 
