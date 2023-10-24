@@ -67,7 +67,7 @@ class DaDataAddress extends DaDataService
             'locations_boost'   => $locations_boost,
             'from_bound'        => $from_bound,
             'to_bound'          => $to_bound,
-            'to_bound'          => $restrict_value,
+            'restrict_value'          => $restrict_value,
         ]);
     }
 
